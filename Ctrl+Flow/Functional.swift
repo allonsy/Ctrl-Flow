@@ -38,7 +38,3 @@ func filter <A>(pred : (A) -> Bool, xs : [A]) -> [A]
     }
     return ret
 }
-
-let a = [1,2,3,4]
-let b = map({(b : Int) -> Int in b + 1}, a)
-let c : () = print("Here: \(b)")
