@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7316105A1B6ADF6200966D26 /* ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731610591B6ADF6200966D26 /* ControlFlow.swift */; };
+		733E93181B6AD0E700668297 /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E93171B6AD0E700668297 /* ActionProtocol.swift */; };
+		733E931A1B6AD74600668297 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E93191B6AD74600668297 /* Action.swift */; };
+		733E931C1B6ADD3700668297 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E931B1B6ADD3700668297 /* Condition.swift */; };
 		73F194531B6994D3009DD6C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F194521B6994D3009DD6C4 /* AppDelegate.swift */; };
 		73F194551B6994D3009DD6C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F194541B6994D3009DD6C4 /* ViewController.swift */; };
 		73F194581B6994D3009DD6C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F194561B6994D3009DD6C4 /* Main.storyboard */; };
@@ -27,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		731610591B6ADF6200966D26 /* ControlFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlow.swift; sourceTree = "<group>"; };
+		733E93171B6AD0E700668297 /* ActionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
+		733E93191B6AD74600668297 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = ../Action.swift; sourceTree = "<group>"; };
+		733E931B1B6ADD3700668297 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
 		73F1944D1B6994D3009DD6C4 /* Ctrl+Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ctrl+Flow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F194511B6994D3009DD6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73F194521B6994D3009DD6C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +66,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7316105B1B6AE2BF00966D26 /* infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				733E93191B6AD74600668297 /* Action.swift */,
+				733E93171B6AD0E700668297 /* ActionProtocol.swift */,
+				733E931B1B6ADD3700668297 /* Condition.swift */,
+				731610591B6ADF6200966D26 /* ControlFlow.swift */,
+			);
+			name = infrastructure;
+			sourceTree = "<group>";
+		};
+		7316105C1B6AE2FC00966D26 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				73F194721B69950B009DD6C4 /* Functional.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		73F194441B6994D3009DD6C4 = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +106,8 @@
 		73F1944F1B6994D3009DD6C4 /* Ctrl+Flow */ = {
 			isa = PBXGroup;
 			children = (
-				73F194721B69950B009DD6C4 /* Functional.swift */,
+				7316105C1B6AE2FC00966D26 /* Utilities */,
+				7316105B1B6AE2BF00966D26 /* infrastructure */,
 				73F194521B6994D3009DD6C4 /* AppDelegate.swift */,
 				73F194541B6994D3009DD6C4 /* ViewController.swift */,
 				73F194561B6994D3009DD6C4 /* Main.storyboard */,
@@ -217,8 +245,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F194731B69950B009DD6C4 /* Functional.swift in Sources */,
+				733E931C1B6ADD3700668297 /* Condition.swift in Sources */,
 				73F194551B6994D3009DD6C4 /* ViewController.swift in Sources */,
 				73F194531B6994D3009DD6C4 /* AppDelegate.swift in Sources */,
+				733E931A1B6AD74600668297 /* Action.swift in Sources */,
+				733E93181B6AD0E700668297 /* ActionProtocol.swift in Sources */,
+				7316105A1B6ADF6200966D26 /* ControlFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +448,7 @@
 				73F1946E1B6994D3009DD6C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73F1946F1B6994D3009DD6C4 /* Build configuration list for PBXNativeTarget "Ctrl+FlowTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +457,7 @@
 				73F194711B6994D3009DD6C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
