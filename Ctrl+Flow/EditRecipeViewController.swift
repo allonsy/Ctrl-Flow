@@ -8,20 +8,29 @@
 
 import UIKit
 
-class NewRecipeViewController: UITableViewController
+class EditRecipeViewController: UITableViewController
 {
-    let actionSource = ActionDataSource()
+    var actionSource = EditRecipeDataController()
+    var vcTitle : String = NSLocalizedString("add-recipe-title", comment: "")
+    var thisRecipe : Recipe?
     
     override func loadView()
     {
         self.tableView = UITableView()
+        if let actions = thisRecipe?.actions
+        {
+            actionSource.actions = actions
+        }
         self.tableView.dataSource = actionSource
     }
     
     override func viewDidLoad()
     {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "showAddExecutableSheet");
-        self.title = NSLocalizedString("add-recipe-title", comment: "")
+        self.title = vcTitle
+        let saveButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "saveButtonPressed")
+        self.toolbarItems = [genToolBarSpacer(), saveButton, genToolBarSpacer()]
+        self.navigationController!.toolbarHidden = false
     }
     
     func showAddExecutableSheet()
@@ -32,5 +41,13 @@ class NewRecipeViewController: UITableViewController
         addExecSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(addExecSheet, animated: true, completion: nil)
     }
-
+    func saveButtonPressed()
+    {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func genToolBarSpacer() -> UIBarButtonItem
+    {
+        return UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+    }
 }
