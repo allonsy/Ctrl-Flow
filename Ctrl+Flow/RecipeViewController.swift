@@ -25,7 +25,8 @@ class RecipeViewController: UITableViewController {
     
     func addRecipe()
     {
-        print("hello")
+        let addRecipeVC = NewRecipeViewController()
+        self.navigationController?.pushViewController(addRecipeVC, animated: true)
     }
 
 }

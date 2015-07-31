@@ -11,6 +11,7 @@ import Foundation
 
 protocol Executable
 {
+    func getName() -> String
     func execute() -> Bool
 }
 

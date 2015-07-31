@@ -15,10 +15,16 @@ class Action : Executable
     var executeBlock : (Any?) -> Bool = { (_ : Any?) -> Bool in return true }
     var argumentPickerVC : UIViewController?
     var delegate : CallbackWhenReadyDelegate?
+    var name = "Action"
     
     func execute() -> Bool
     {
         return true
+    }
+    
+    func getName() -> String
+    {
+        return name
     }
 }
 

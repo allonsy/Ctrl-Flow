@@ -17,9 +17,15 @@ class ControlFlow : Executable
     var controlFlowPickerVC : UIViewController?
     var delegate : CallbackWhenReadyDelegate?
     var executeBlock : () -> Bool = {() -> Bool in return true}
+    var name = "Control Flow"
     
     func execute() -> Bool {
         return executeBlock()
+    }
+    
+    func getName() -> String
+    {
+        return name
     }
     
 }

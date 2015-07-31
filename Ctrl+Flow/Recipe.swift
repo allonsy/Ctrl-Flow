@@ -35,6 +35,10 @@ class Recipe : Executable
         }
         return true
     }
+    func getName() -> String
+    {
+        return name
+    }
 }
 
 /* Recipe represents a sequence of Actions

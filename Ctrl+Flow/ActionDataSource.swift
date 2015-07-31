@@ -1,5 +1,5 @@
 //
-//  RecipeDataSource.swift
+//  ActionSource.swift
 //  Ctrl+Flow
 //
 //  Created by Alec Snyder on 7/31/15.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-class RecipeDataSource : NSObject,UITableViewDataSource {
+class ActionDataSource : NSObject,UITableViewDataSource {
     
-    var recipes = [Recipe]()
+    var actions = [Executable]()
     //var recipes = [Recipe(name: "Hello", actions: [Executable](), continuous: false)]
     
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == 0)
         {
-            return recipes.count
+            return actions.count
         }
         else
         {
@@ -25,13 +25,13 @@ class RecipeDataSource : NSObject,UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return getCellForRecipe(recipes[indexPath.indexAtPosition(1)])
+        return getCellForAction(actions[indexPath.indexAtPosition(1)])
     }
     
-    func getCellForRecipe(rec : Recipe) -> UITableViewCell
+    func getCellForAction(act : Executable) -> UITableViewCell
     {
-        let retCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "recipeCell")
-        retCell.textLabel!.text = rec.name
+        let retCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "actionCell")
+        retCell.textLabel!.text = act.getName()
         return retCell
     }
     
@@ -39,7 +39,7 @@ class RecipeDataSource : NSObject,UITableViewDataSource {
     {
         if(editingStyle == UITableViewCellEditingStyle.Delete)
         {
-            recipes.removeAtIndex(indexPath.indexAtPosition(1));
+            actions.removeAtIndex(indexPath.indexAtPosition(1));
         }
     }
 }
