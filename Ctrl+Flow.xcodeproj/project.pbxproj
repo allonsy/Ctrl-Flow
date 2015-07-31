@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7316105A1B6ADF6200966D26 /* ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731610591B6ADF6200966D26 /* ControlFlow.swift */; };
+		7316105E1B6AF1B800966D26 /* RecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316105D1B6AF1B800966D26 /* RecipeTableViewController.swift */; };
+		731610641B6AF26D00966D26 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 731610631B6AF26D00966D26 /* localizable.strings */; };
 		733E93181B6AD0E700668297 /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E93171B6AD0E700668297 /* ActionProtocol.swift */; };
 		733E931A1B6AD74600668297 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E93191B6AD74600668297 /* Action.swift */; };
 		733E931C1B6ADD3700668297 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E931B1B6ADD3700668297 /* Condition.swift */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		731610591B6ADF6200966D26 /* ControlFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlow.swift; sourceTree = "<group>"; };
+		7316105D1B6AF1B800966D26 /* RecipeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewController.swift; sourceTree = "<group>"; };
+		731610631B6AF26D00966D26 /* localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = localizable.strings; sourceTree = "<group>"; };
 		733E93171B6AD0E700668297 /* ActionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		733E93191B6AD74600668297 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = ../Action.swift; sourceTree = "<group>"; };
 		733E931B1B6ADD3700668297 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
@@ -85,6 +89,21 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		7316105F1B6AF1D200966D26 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		731610601B6AF22B00966D26 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				731610631B6AF26D00966D26 /* localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		73F194441B6994D3009DD6C4 = {
 			isa = PBXGroup;
 			children = (
@@ -106,13 +125,16 @@
 		73F1944F1B6994D3009DD6C4 /* Ctrl+Flow */ = {
 			isa = PBXGroup;
 			children = (
-				7316105C1B6AE2FC00966D26 /* Utilities */,
+				7316105D1B6AF1B800966D26 /* RecipeTableViewController.swift */,
+				7316105F1B6AF1D200966D26 /* ViewControllers */,
 				7316105B1B6AE2BF00966D26 /* infrastructure */,
 				73F194521B6994D3009DD6C4 /* AppDelegate.swift */,
 				73F194541B6994D3009DD6C4 /* ViewController.swift */,
 				73F194561B6994D3009DD6C4 /* Main.storyboard */,
 				73F194591B6994D3009DD6C4 /* Images.xcassets */,
 				73F1945B1B6994D3009DD6C4 /* LaunchScreen.xib */,
+				731610601B6AF22B00966D26 /* Resources */,
+				7316105C1B6AE2FC00966D26 /* Utilities */,
 				73F194501B6994D3009DD6C4 /* Supporting Files */,
 			);
 			path = "Ctrl+Flow";
@@ -225,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F194581B6994D3009DD6C4 /* Main.storyboard in Resources */,
+				731610641B6AF26D00966D26 /* localizable.strings in Resources */,
 				73F1945D1B6994D3009DD6C4 /* LaunchScreen.xib in Resources */,
 				73F1945A1B6994D3009DD6C4 /* Images.xcassets in Resources */,
 			);
@@ -245,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F194731B69950B009DD6C4 /* Functional.swift in Sources */,
+				7316105E1B6AF1B800966D26 /* RecipeTableViewController.swift in Sources */,
 				733E931C1B6ADD3700668297 /* Condition.swift in Sources */,
 				73F194551B6994D3009DD6C4 /* ViewController.swift in Sources */,
 				73F194531B6994D3009DD6C4 /* AppDelegate.swift in Sources */,
