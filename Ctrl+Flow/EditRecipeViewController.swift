@@ -21,6 +21,11 @@ class EditRecipeViewController: UITableViewController
         {
             actionSource.actions = actions
         }
+        if(thisRecipe != nil)
+        {
+            actionSource.thisRecipe = thisRecipe
+            actionSource.actions = thisRecipe!.actions
+        }
         self.tableView.dataSource = actionSource
     }
     

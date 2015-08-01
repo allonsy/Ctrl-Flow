@@ -10,8 +10,8 @@ import UIKit
 
 class RecipeDataController : NSObject,UITableViewDataSource,UITableViewDelegate {
     
-    var recipes = [Recipe]()
-    //var recipes = [Recipe(name: "Hello everyone in the world", actions: [Executable](), continuous: false)]
+    //var recipes = [Recipe]()
+    var recipes = [Recipe(name: "Hello everyone in the world", actions: [Executable](), continuous: false)]
     var navigationController : UINavigationController? = nil
     
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,7 +25,8 @@ class RecipeDataController : NSObject,UITableViewDataSource,UITableViewDelegate 
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         return getCellForRecipe(recipes[indexPath.indexAtPosition(1)])
     }
     
