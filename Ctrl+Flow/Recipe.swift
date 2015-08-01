@@ -13,12 +13,14 @@ class Recipe : Executable
     let name : String
     let actions : [Executable]
     let continuous : Bool
+    var activated : Bool
     
     init(name : String, actions: [Executable], continuous : Bool)
     {
         self.name = name
         self.actions = actions
         self.continuous = continuous
+        self.activated = false
     }
     
     func execute() -> Bool {

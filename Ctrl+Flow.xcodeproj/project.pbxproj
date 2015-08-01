@@ -24,6 +24,8 @@
 		73F1945D1B6994D3009DD6C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73F1945B1B6994D3009DD6C4 /* LaunchScreen.xib */; };
 		73F194691B6994D3009DD6C4 /* Ctrl_FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F194681B6994D3009DD6C4 /* Ctrl_FlowTests.swift */; };
 		73F194731B69950B009DD6C4 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F194721B69950B009DD6C4 /* Functional.swift */; };
+		9754E2291B6D6C89000EA6DF /* CFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9754E2281B6D6C89000EA6DF /* CFViewController.swift */; };
+		9754E22B1B6D6D97000EA6DF /* CFRecipeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9754E22A1B6D6D97000EA6DF /* CFRecipeSwitch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		73F194671B6994D3009DD6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73F194681B6994D3009DD6C4 /* Ctrl_FlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ctrl_FlowTests.swift; sourceTree = "<group>"; };
 		73F194721B69950B009DD6C4 /* Functional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functional.swift; sourceTree = "<group>"; };
+		9754E2281B6D6C89000EA6DF /* CFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFViewController.swift; sourceTree = "<group>"; };
+		9754E22A1B6D6D97000EA6DF /* CFRecipeSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFRecipeSwitch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				733E931B1B6ADD3700668297 /* Condition.swift */,
 				731610591B6ADF6200966D26 /* ControlFlow.swift */,
 				730E3E4B1B6BEC5E00F79D4F /* Recipe.swift */,
+				9754E2281B6D6C89000EA6DF /* CFViewController.swift */,
+				9754E22A1B6D6D97000EA6DF /* CFRecipeSwitch.swift */,
 			);
 			name = infrastructure;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9754E22B1B6D6D97000EA6DF /* CFRecipeSwitch.swift in Sources */,
 				730E3E561B6C1C7700F79D4F /* EditRecipeDataController.swift in Sources */,
 				73F194731B69950B009DD6C4 /* Functional.swift in Sources */,
 				733E931C1B6ADD3700668297 /* Condition.swift in Sources */,
@@ -307,6 +314,7 @@
 				733E93181B6AD0E700668297 /* ActionProtocol.swift in Sources */,
 				730E3E521B6BF0BF00F79D4F /* RecipeDataController.swift in Sources */,
 				7316105A1B6ADF6200966D26 /* ControlFlow.swift in Sources */,
+				9754E2291B6D6C89000EA6DF /* CFViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,6 +34,10 @@ class RecipeDataController : NSObject,UITableViewDataSource,UITableViewDelegate 
     {
         let retCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "recipeCell")
         retCell.textLabel!.text = rec.name
+        let activateSwitch = CFRecipeSwitch()
+        activateSwitch.thisRecipe = rec
+        activateSwitch.on = rec.activated
+        retCell.accessoryView = activateSwitch
         return retCell
     }
     

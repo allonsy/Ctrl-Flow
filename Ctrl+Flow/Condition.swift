@@ -13,8 +13,7 @@ class Condition
 {
     var arg : Any? = nil
     var executeBlock : (Any?) -> Any? = { (_ : Any?) -> Any? in return nil }
-    var argumentPickerVC : UIViewController?
-    var delegate : CallbackWhenReadyDelegate?
+    var argumentPickerVC : CFViewController?
 }
 
 struct ConditionWrapper

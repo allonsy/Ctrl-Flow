@@ -15,7 +15,7 @@ protocol Executable
     func execute() -> Bool
 }
 
-protocol CallbackWhenReadyDelegate
+protocol CallbackWhenReadyDelegate : class
 {
     func objIsReady() -> ()
 }
