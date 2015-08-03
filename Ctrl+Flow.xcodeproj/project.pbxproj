@@ -17,6 +17,8 @@
 		733E93181B6AD0E700668297 /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E93171B6AD0E700668297 /* ActionProtocol.swift */; };
 		733E931A1B6AD74600668297 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E93191B6AD74600668297 /* Action.swift */; };
 		733E931C1B6ADD3700668297 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E931B1B6ADD3700668297 /* Condition.swift */; };
+		7340B8F71B701423003936F8 /* CFTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340B8F51B701423003936F8 /* CFTextViewController.swift */; };
+		7340B8F81B701423003936F8 /* CFTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7340B8F61B701423003936F8 /* CFTextViewController.xib */; };
 		7383C4B61B6FE85C00F20D18 /* CFGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B51B6FE85C00F20D18 /* CFGlobal.swift */; };
 		7383C4B81B6FF04400F20D18 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B71B6FF04400F20D18 /* ActionViewController.swift */; };
 		7383C4BA1B6FF0CF00F20D18 /* ActionDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B91B6FF0CF00F20D18 /* ActionDataController.swift */; };
@@ -51,6 +53,8 @@
 		733E93171B6AD0E700668297 /* ActionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		733E93191B6AD74600668297 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = ../Action.swift; sourceTree = "<group>"; };
 		733E931B1B6ADD3700668297 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		7340B8F51B701423003936F8 /* CFTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFTextViewController.swift; sourceTree = "<group>"; };
+		7340B8F61B701423003936F8 /* CFTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFTextViewController.xib; sourceTree = "<group>"; };
 		7383C4B51B6FE85C00F20D18 /* CFGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFGlobal.swift; sourceTree = "<group>"; };
 		7383C4B71B6FF04400F20D18 /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		7383C4B91B6FF0CF00F20D18 /* ActionDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionDataController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				730E3E4D1B6BEE9800F79D4F /* RecipeViewController.swift */,
 				730E3E531B6C1BCD00F79D4F /* EditRecipeViewController.swift */,
 				7383C4B71B6FF04400F20D18 /* ActionViewController.swift */,
+				7340B8F51B701423003936F8 /* CFTextViewController.swift */,
+				7340B8F61B701423003936F8 /* CFTextViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 				731610641B6AF26D00966D26 /* Localizable.strings in Resources */,
 				73F1945D1B6994D3009DD6C4 /* LaunchScreen.xib in Resources */,
 				73F1945A1B6994D3009DD6C4 /* Images.xcassets in Resources */,
+				7340B8F81B701423003936F8 /* CFTextViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7340B8F71B701423003936F8 /* CFTextViewController.swift in Sources */,
 				9754E22B1B6D6D97000EA6DF /* CFRecipeSwitch.swift in Sources */,
 				7383C4BA1B6FF0CF00F20D18 /* ActionDataController.swift in Sources */,
 				730E3E561B6C1C7700F79D4F /* EditRecipeDataController.swift in Sources */,

@@ -1,14 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
 //
 //  ActionSource.swift
 //  Ctrl+Flow
@@ -19,24 +8,25 @@
 
 import UIKit
 
-class EditRecipeDataController : NSObject,UITableViewDataSource,UITableViewDelegate
+class EditRecipeDataController : NSObject,UITableViewDataSource
 {
     var actions : [Executable]
     var thisRecipe : Recipe?
+    var options : (String, Bool)
     
     override init()
     {
         thisRecipe = nil
         actions = [Executable]()
-        print("arr: \(CFGlobal.actions)")
+        options = ("Name", true)
 
     }
     
     init(recipe: Recipe)
     {
-        print("I'm in")
         thisRecipe = recipe
         actions = thisRecipe!.actions
+        options = (thisRecipe!.name,thisRecipe!.activated)
     }
     
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +36,7 @@ class EditRecipeDataController : NSObject,UITableViewDataSource,UITableViewDeleg
         }
         else
         {
-            return 1
+            return 2
         }
     }
     
@@ -67,14 +57,12 @@ class EditRecipeDataController : NSObject,UITableViewDataSource,UITableViewDeleg
         switch index
         {
         case 0:
-            if let rec = thisRecipe
-            {
-                retCell.textLabel!.text = "Name: " + rec.getName()
-            }
-            else
-            {
-                retCell.textLabel!.text = "Name"
-            }
+            retCell.textLabel!.text = "Name: " + options.0
+        case 1:
+            retCell.textLabel?.text = "Continuous"
+            let contSwitch = UISwitch()
+            contSwitch.on = options.1
+            retCell.accessoryView = contSwitch
         default:
             break;
         }

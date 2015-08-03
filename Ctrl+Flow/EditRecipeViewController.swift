@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditRecipeViewController: UITableViewController
+class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
 {
     var actionSource = EditRecipeDataController()
     var vcTitle : String = NSLocalizedString("add-recipe-title", comment: "")
@@ -18,16 +18,15 @@ class EditRecipeViewController: UITableViewController
     override func loadView()
     {
         self.tableView = UITableView()
-        if let actions = thisRecipe?.actions
-        {
-            actionSource.actions = actions
-        }
         if(thisRecipe != nil)
         {
             actionSource.thisRecipe = thisRecipe
             actionSource.actions = thisRecipe!.actions
+            actionSource.options.0 = thisRecipe!.name
+            actionSource.options.1 = thisRecipe!.activated
         }
         self.tableView.dataSource = actionSource
+        self.tableView.delegate = self
     }
     
     override func viewDidLoad()
@@ -49,8 +48,24 @@ class EditRecipeViewController: UITableViewController
     }
     func saveButtonPressed()
     {
+        let retRecipe : Recipe
+        if(thisRecipe == nil)
+        {
+            retRecipe = Recipe(name: actionSource.options.0, actions: actionSource.actions, continuous: actionSource.options.1)
+            callBackDelegate?.objIsReady(retRecipe)
+        }
+        else
+        {
+            retRecipe = thisRecipe!
+            retRecipe.name = actionSource.options.0
+            retRecipe.activated = actionSource.options.1
+            retRecipe.actions = actionSource.actions
+            callBackDelegate!.objIsReady(nil)
+        }
+        if(callBackDelegate != nil)
+        {
+        }
         navigationController?.popViewControllerAnimated(true)
-        
     }
     
     func showAddActionVC( _ : UIAlertAction!)
@@ -62,5 +77,36 @@ class EditRecipeViewController: UITableViewController
     func genToolBarSpacer() -> UIBarButtonItem
     {
         return UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+    }
+    
+    //MARK: UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(indexPath.indexAtPosition(0) == 0)
+        {
+            if(indexPath.indexAtPosition(1) == 0)
+            {
+                let nameVC = CFTextViewController(nibName:"CFTextViewController", bundle:nil)
+                nameVC.callBackDelegate = self
+                if(actionSource.thisRecipe == nil)
+                {
+                    nameVC.hintText = "Name"
+                }
+                else
+                {
+                    nameVC.hintText = actionSource.thisRecipe!.name
+                }
+                navigationController?.pushViewController(nameVC, animated: true)
+            }
+        }
+    }
+    
+    func objIsReady(ret : Any?)
+    {
+        if let retString = ret as? String
+        {
+            actionSource.options = (retString, actionSource.options.1)
+            self.tableView.reloadData()
+        }
     }
 }

@@ -47,13 +47,4 @@ class RecipeDataController : NSObject,UITableViewDataSource,UITableViewDelegate 
             recipes.removeAtIndex(indexPath.indexAtPosition(1));
         }
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        let selectedRecipe = recipes[indexPath.indexAtPosition(1)]
-        let editRecipeVC = EditRecipeViewController()
-        editRecipeVC.vcTitle = "Edit Recipe: " + selectedRecipe.getName()
-        editRecipeVC.thisRecipe = selectedRecipe
-        self.navigationController?.pushViewController(editRecipeVC, animated: true)
-    }
 }
