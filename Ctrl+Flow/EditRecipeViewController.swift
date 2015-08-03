@@ -108,5 +108,10 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
             actionSource.options = (retString, actionSource.options.1)
             self.tableView.reloadData()
         }
+        if let retAction = ret as? Executable
+        {
+            actionSource.actions.append(retAction)
+            self.tableView.reloadData()
+        }
     }
 }
