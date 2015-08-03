@@ -28,10 +28,13 @@ class EditRecipeDataController : NSObject,UITableViewDataSource,UITableViewDeleg
     {
         thisRecipe = nil
         actions = [Executable]()
+        print("arr: \(CFGlobal.actions)")
+
     }
     
     init(recipe: Recipe)
     {
+        print("I'm in")
         thisRecipe = recipe
         actions = thisRecipe!.actions
     }

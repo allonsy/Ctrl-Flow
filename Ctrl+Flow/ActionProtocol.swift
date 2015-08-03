@@ -17,7 +17,8 @@ protocol Executable
 
 protocol CallbackWhenReadyDelegate : class
 {
-    func objIsReady() -> ()
+    weak var callBackDelegate : CallbackWhenReadyDelegate? { get set }
+    func objIsReady() -> Any?
 }
 
 typealias ActionSequence = [Executable]

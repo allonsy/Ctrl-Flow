@@ -13,6 +13,7 @@ class EditRecipeViewController: UITableViewController
     var actionSource = EditRecipeDataController()
     var vcTitle : String = NSLocalizedString("add-recipe-title", comment: "")
     var thisRecipe : Recipe?
+    weak var callBackDelegate : CallbackWhenReadyDelegate?
     
     override func loadView()
     {
@@ -42,13 +43,20 @@ class EditRecipeViewController: UITableViewController
     {
         let addExecSheet = UIAlertController(title: "Add An Action", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         addExecSheet.addAction(UIAlertAction(title: "Add a Control Flow", style: UIAlertActionStyle.Default, handler: nil))
-        addExecSheet.addAction(UIAlertAction(title: "Add an Action", style: UIAlertActionStyle.Default, handler: nil))
+        addExecSheet.addAction(UIAlertAction(title: "Add an Action", style: UIAlertActionStyle.Default, handler: showAddActionVC))
         addExecSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(addExecSheet, animated: true, completion: nil)
     }
     func saveButtonPressed()
     {
         navigationController?.popViewControllerAnimated(true)
+        
+    }
+    
+    func showAddActionVC( _ : UIAlertAction!)
+    {
+        let actionVC = ActionViewController()
+        self.navigationController?.pushViewController(actionVC, animated: true)
     }
     
     func genToolBarSpacer() -> UIBarButtonItem
