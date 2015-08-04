@@ -19,6 +19,7 @@
 		733E931C1B6ADD3700668297 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E931B1B6ADD3700668297 /* Condition.swift */; };
 		7340B8F71B701423003936F8 /* CFTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340B8F51B701423003936F8 /* CFTextViewController.swift */; };
 		7340B8F81B701423003936F8 /* CFTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7340B8F61B701423003936F8 /* CFTextViewController.xib */; };
+		7340B8FA1B702B5D003936F8 /* CFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340B8F91B702B5D003936F8 /* CFViewController.swift */; };
 		7383C4B61B6FE85C00F20D18 /* CFGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B51B6FE85C00F20D18 /* CFGlobal.swift */; };
 		7383C4B81B6FF04400F20D18 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B71B6FF04400F20D18 /* ActionViewController.swift */; };
 		7383C4BA1B6FF0CF00F20D18 /* ActionDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B91B6FF0CF00F20D18 /* ActionDataController.swift */; };
@@ -55,6 +56,7 @@
 		733E931B1B6ADD3700668297 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
 		7340B8F51B701423003936F8 /* CFTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFTextViewController.swift; sourceTree = "<group>"; };
 		7340B8F61B701423003936F8 /* CFTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFTextViewController.xib; sourceTree = "<group>"; };
+		7340B8F91B702B5D003936F8 /* CFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFViewController.swift; sourceTree = "<group>"; };
 		7383C4B51B6FE85C00F20D18 /* CFGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFGlobal.swift; sourceTree = "<group>"; };
 		7383C4B71B6FF04400F20D18 /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		7383C4B91B6FF0CF00F20D18 /* ActionDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionDataController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				731610591B6ADF6200966D26 /* ControlFlow.swift */,
 				730E3E4B1B6BEC5E00F79D4F /* Recipe.swift */,
 				9754E22A1B6D6D97000EA6DF /* CFRecipeSwitch.swift */,
+				7340B8F91B702B5D003936F8 /* CFViewController.swift */,
 			);
 			name = infrastructure;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				733E93181B6AD0E700668297 /* ActionProtocol.swift in Sources */,
 				7383C4B81B6FF04400F20D18 /* ActionViewController.swift in Sources */,
 				7383C4B61B6FE85C00F20D18 /* CFGlobal.swift in Sources */,
+				7340B8FA1B702B5D003936F8 /* CFViewController.swift in Sources */,
 				730E3E521B6BF0BF00F79D4F /* RecipeDataController.swift in Sources */,
 				7316105A1B6ADF6200966D26 /* ControlFlow.swift in Sources */,
 			);

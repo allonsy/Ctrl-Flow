@@ -14,8 +14,8 @@ class ControlFlow : Executable
 {
     var condition : Condition = Condition()
     var actions : ActionSequence = ActionSequence()
-    var controlFlowPickerVC : UIViewController?
     var executeBlock : (Condition, ActionSequence) -> Bool = {(Condition, ActionSequence) -> Bool in return true}
+    var controlFlowPickerVC : CFViewController?
     var name = "Control Flow"
     
     func execute() -> Bool {
