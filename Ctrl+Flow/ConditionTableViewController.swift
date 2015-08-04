@@ -31,7 +31,8 @@ class ConditionTableViewController: UITableViewController,CallbackWhenReadyDeleg
         let newCondition = selectedCondition.returnCondition()
         if(newCondition.argumentPickerVC == nil)
         {
-            objIsReady((cfIndexPath!,newCondition))
+            callbackDelegate?.objIsReady((cfIndexPath!,newCondition))
+            self.navigationController?.popViewControllerAnimated(true)
         }
         else
         {
@@ -43,7 +44,9 @@ class ConditionTableViewController: UITableViewController,CallbackWhenReadyDeleg
     func objIsReady(tup : (NSIndexPath,Any)?)
     {
         let (indexPath, ret) = tup!
-        callbackDelegate?.objIsReady((cfIndexPath!, ret))
+        let selectedCondition = dataController.conditions[indexPath.row].returnCondition()
+        selectedCondition.arg = ret
+        callbackDelegate?.objIsReady((cfIndexPath!, selectedCondition))
         self.navigationController?.popViewControllerAnimated(true)
     }
 }

@@ -44,9 +44,9 @@ class ControlFlowTableViewController: UITableViewController,CallbackWhenReadyDel
         let newControl = selectedControl.returnControlFlow()
         if(newControl.controlFlowPickerVC == nil)
         {
-            let editCFVC = EditControlFlowTableViewController(controlFlow: dataController.controlFlows[indexPath.row].returnControlFlow())
+            let editCFVC = EditControlFlowTableViewController(controlFlow: newControl)
             editCFVC.callbackDelegate = self
-            editCFVC.indexPath = indexPath
+            editCFVC.indexPath = self.indexPath
             navigationController?.pushViewController(editCFVC, animated: true)
         }
         else

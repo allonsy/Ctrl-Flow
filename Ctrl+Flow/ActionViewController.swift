@@ -45,7 +45,10 @@ class ActionViewController: UITableViewController,CallbackWhenReadyDelegate
     
     func objIsReady(ret: (NSIndexPath,Any)?)
     {
-        callbackDelegate?.objIsReady(ret)
+        let (indexPath, retArg) = ret!
+        let selectedAction = dataController.actions[indexPath.row].returnAction()
+        selectedAction.arg = retArg
+        callbackDelegate?.objIsReady((self.cfIndexPath!,selectedAction))
         self.navigationController?.popViewControllerAnimated(true)
     }
 
