@@ -14,6 +14,11 @@ class Condition
     var arg : Any? = nil
     var executeBlock : (Any?) -> Any? = { (_ : Any?) -> Any? in return nil }
     var argumentPickerVC : UIViewController?
+    
+    func getCondition () -> Any?
+    {
+        return executeBlock(arg)
+    }
 }
 
 struct ConditionWrapper

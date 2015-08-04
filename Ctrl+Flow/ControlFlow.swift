@@ -15,11 +15,11 @@ class ControlFlow : Executable
     var condition : Condition = Condition()
     var actions : ActionSequence = ActionSequence()
     var controlFlowPickerVC : UIViewController?
-    var executeBlock : () -> Bool = {() -> Bool in return true}
+    var executeBlock : (Condition, ActionSequence) -> Bool = {(Condition, ActionSequence) -> Bool in return true}
     var name = "Control Flow"
     
     func execute() -> Bool {
-        return executeBlock()
+        return executeBlock(condition, actions)
     }
     
     func getName() -> String
@@ -44,7 +44,7 @@ struct ControlFlowWrapper
 }
 
 /* Control flow takes a condition and executes a series of actions based on that condition
-Essentially, in the executeBlock, the control flow executes the condition.executeBlock code and checks if the results are nil or not
+Essentially, in the executeBlogit statck, the control flow executes the condition.executeBlock code and checks if the results are nil or not
 then, it conditionally executes the array of actions given
 
 For more complicated flows, the programmer can create a custom VC to choose conditions and actions, when the control flow object is ready,

@@ -18,7 +18,7 @@ class Action : Executable
     
     func execute() -> Bool
     {
-        return true
+        return executeBlock(arg)
     }
     
     func getName() -> String
