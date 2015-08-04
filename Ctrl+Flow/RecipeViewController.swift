@@ -53,10 +53,8 @@ class RecipeViewController: UITableViewController,CallbackWhenReadyDelegate {
     func objIsReady(ret : Any?) {
         if(ret != nil)
         {
-            print("In save not nil")
             recipeSource.recipes.append(ret as! Recipe)
         }
-        print("bypass")
         self.tableView.reloadData()
     }
 }

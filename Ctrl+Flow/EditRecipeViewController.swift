@@ -71,6 +71,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
     func showAddActionVC( _ : UIAlertAction!)
     {
         let actionVC = ActionViewController()
+        actionVC.callbackDelegate = self
         self.navigationController?.pushViewController(actionVC, animated: true)
     }
     
@@ -87,7 +88,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
             if(indexPath.indexAtPosition(1) == 0)
             {
                 let nameVC = CFTextViewController(nibName:"CFTextViewController", bundle:nil)
-                nameVC.callBackDelegate = self
+                nameVC.callbackDelegate = self
                 if(actionSource.thisRecipe == nil)
                 {
                     nameVC.hintText = "Name"
@@ -103,6 +104,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
     
     func objIsReady(ret : Any?)
     {
+        print("In obj")
         if let retString = ret as? String
         {
             actionSource.options = (retString, actionSource.options.1)
@@ -110,6 +112,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
         }
         if let retAction = ret as? Executable
         {
+            print("In data reload")
             actionSource.actions.append(retAction)
             self.tableView.reloadData()
         }

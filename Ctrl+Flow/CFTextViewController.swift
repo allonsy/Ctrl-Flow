@@ -8,10 +8,9 @@
 
 import UIKit
 
-class CFTextViewController: UIViewController, callBackObject
+class CFTextViewController: CFViewController
 {
     var hintText : String? = nil
-    weak var callBackDelegate : CallbackWhenReadyDelegate?
     @IBOutlet weak var entryTextField: UITextField!
     
     override func viewDidLoad() {
@@ -21,7 +20,7 @@ class CFTextViewController: UIViewController, callBackObject
     
     func saveText()
     {
-        callBackDelegate!.objIsReady(entryTextField.text)
+        callbackDelegate!.objIsReady(entryTextField.text)
         navigationController?.popViewControllerAnimated(true)
     }
     

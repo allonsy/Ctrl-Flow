@@ -11,16 +11,18 @@ import UIKit
 class ActionViewController: UITableViewController,CallbackWhenReadyDelegate
 {
     let dataController = ActionDataController()
-    let callbackDelegate : CallbackWhenReadyDelegate? = nil
+    var callbackDelegate : CallbackWhenReadyDelegate? = nil
     
     override func loadView() {
         tableView = UITableView()
         tableView.dataSource = dataController
-        tableView.delegate = dataController
+        tableView.delegate = self
         
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
         self.title = "Pick an Action"
     }
     
@@ -31,6 +33,7 @@ class ActionViewController: UITableViewController,CallbackWhenReadyDelegate
         if(newAction.argumentPickerVC == nil)
         {
             callbackDelegate?.objIsReady(newAction)
+            self.navigationController?.popViewControllerAnimated(true)
         }
         else
         {
@@ -42,6 +45,7 @@ class ActionViewController: UITableViewController,CallbackWhenReadyDelegate
     func objIsReady(ret: Any?)
     {
         callbackDelegate?.objIsReady(ret)
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
 }

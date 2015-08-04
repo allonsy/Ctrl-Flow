@@ -13,12 +13,13 @@ class Condition
 {
     var arg : Any? = nil
     var executeBlock : (Any?) -> Any? = { (_ : Any?) -> Any? in return nil }
+    var argumentPickerVC : CFViewController?
     
     func getCondition () -> Any?
     {
         return executeBlock(arg)
     }
-    var argumentPickerVC : CFViewController?
+    
 }
 
 struct ConditionWrapper

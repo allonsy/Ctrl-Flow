@@ -13,7 +13,7 @@ import AVFoundation
 class CFGlobal
 {
     static let conditions : [ConditionWrapper] = []
-    static let actions : [ActionWrapper] = []
+    static let actions : [ActionWrapper] = [CFGlobal.flashwrap]
     static let controls : [ControlFlowWrapper] = []
     
     
@@ -43,6 +43,7 @@ class CFGlobal
     static let flashlightAction =
     { () -> Action in
         let flashAct = Action()
+        flashAct.name = "Flashlight"
         flashAct.executeBlock = { (_ : Any?) -> Bool in
             let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
             if (device.hasTorch) {
@@ -60,7 +61,7 @@ class CFGlobal
         }
         return flashAct
     }
-    let flashwrap = ActionWrapper(name:"Flashlight",
+    static let flashwrap = ActionWrapper(name:"Flashlight",
                                   description:"Turns on flashlight",
                                   returnActionFunc:flashlightAction)
     
