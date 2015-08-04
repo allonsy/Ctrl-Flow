@@ -12,6 +12,7 @@ class ActionViewController: UITableViewController,CallbackWhenReadyDelegate
 {
     let dataController = ActionDataController()
     var callbackDelegate : CallbackWhenReadyDelegate? = nil
+    var cfIndexPath : NSIndexPath? = nil
     
     override func loadView() {
         tableView = UITableView()
@@ -32,7 +33,7 @@ class ActionViewController: UITableViewController,CallbackWhenReadyDelegate
         let newAction = selectedAction.returnAction()
         if(newAction.argumentPickerVC == nil)
         {
-            callbackDelegate?.objIsReady(newAction)
+            callbackDelegate?.objIsReady((cfIndexPath!,newAction))
             self.navigationController?.popViewControllerAnimated(true)
         }
         else
@@ -42,7 +43,7 @@ class ActionViewController: UITableViewController,CallbackWhenReadyDelegate
         }
     }
     
-    func objIsReady(ret: Any?)
+    func objIsReady(ret: (NSIndexPath,Any)?)
     {
         callbackDelegate?.objIsReady(ret)
         self.navigationController?.popViewControllerAnimated(true)

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class RecipeViewController: UITableViewController,CallbackWhenReadyDelegate {
+class RecipeViewController: UITableViewController,CallbackWhenReadyDelegate
+{
     
     let recipeSource = RecipeDataController()
     
@@ -31,6 +32,7 @@ class RecipeViewController: UITableViewController,CallbackWhenReadyDelegate {
     func addRecipe()
     {
         let addRecipeVC = EditRecipeViewController()
+        addRecipeVC.indexPath = NSIndexPath(forRow: recipeSource.recipes.count, inSection: 0)
         addRecipeVC.callBackDelegate=self
         self.navigationController?.pushViewController(addRecipeVC, animated: true)
     }
@@ -47,13 +49,22 @@ class RecipeViewController: UITableViewController,CallbackWhenReadyDelegate {
         editRecipeVC.thisRecipe = selectedRecipe
         editRecipeVC.vcTitle = "Edit Recipe: " + selectedRecipe.getName()
         editRecipeVC.callBackDelegate = self
+        editRecipeVC.indexPath = indexPath
         self.navigationController?.pushViewController(editRecipeVC, animated: true)
     }
     
-    func objIsReady(ret : Any?) {
-        if(ret != nil)
+    func objIsReady(tup : (NSIndexPath,Any)?) {
+        if(tup != nil)
         {
-            recipeSource.recipes.append(ret as! Recipe)
+            let (indexPath, ret) = tup!
+            if(indexPath.row == recipeSource.recipes.count)
+            {
+                recipeSource.recipes.append(ret as! Recipe)
+            }
+            else
+            {
+                recipeSource.recipes[indexPath.row] = ret as! Recipe
+            }
         }
         self.tableView.reloadData()
     }

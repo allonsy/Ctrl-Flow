@@ -14,6 +14,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
     var vcTitle : String = NSLocalizedString("add-recipe-title", comment: "")
     var thisRecipe : Recipe?
     weak var callBackDelegate : CallbackWhenReadyDelegate?
+    var indexPath : NSIndexPath? = nil
     
     override func loadView()
     {
@@ -41,7 +42,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
     func showAddExecutableSheet()
     {
         let addExecSheet = UIAlertController(title: "Add An Action", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        addExecSheet.addAction(UIAlertAction(title: "Add a Control Flow", style: UIAlertActionStyle.Default, handler: nil))
+        addExecSheet.addAction(UIAlertAction(title: "Add a Control Flow", style: UIAlertActionStyle.Default, handler: showAddControlFlowVC))
         addExecSheet.addAction(UIAlertAction(title: "Add an Action", style: UIAlertActionStyle.Default, handler: showAddActionVC))
         addExecSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(addExecSheet, animated: true, completion: nil)
@@ -52,7 +53,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
         if(thisRecipe == nil)
         {
             retRecipe = Recipe(name: actionSource.options.0, actions: actionSource.actions, continuous: actionSource.options.1)
-            callBackDelegate?.objIsReady(retRecipe)
+            callBackDelegate?.objIsReady((indexPath!,retRecipe))
         }
         else
         {
@@ -60,7 +61,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
             retRecipe.name = actionSource.options.0
             retRecipe.activated = actionSource.options.1
             retRecipe.actions = actionSource.actions
-            callBackDelegate!.objIsReady(nil)
+            callBackDelegate!.objIsReady((indexPath!,retRecipe))
         }
         if(callBackDelegate != nil)
         {
@@ -72,7 +73,16 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
     {
         let actionVC = ActionViewController()
         actionVC.callbackDelegate = self
+        actionVC.cfIndexPath = NSIndexPath(forRow: actionSource.actions.count, inSection: 1)
         self.navigationController?.pushViewController(actionVC, animated: true)
+    }
+    
+    func showAddControlFlowVC( _ : UIAlertAction!)
+    {
+        let addControlFlowVC = ControlFlowTableViewController()
+        addControlFlowVC.callbackDelegate = self
+        addControlFlowVC.indexPath = NSIndexPath(forRow: 1, inSection: actionSource.actions.count)
+        navigationController?.pushViewController(addControlFlowVC, animated: true)
     }
     
     func genToolBarSpacer() -> UIBarButtonItem
@@ -97,24 +107,31 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
                 {
                     nameVC.hintText = actionSource.thisRecipe!.name
                 }
+                nameVC.indexPath = NSIndexPath(forRow: 0, inSection: 0)
                 navigationController?.pushViewController(nameVC, animated: true)
             }
         }
     }
     
-    func objIsReady(ret : Any?)
+    func objIsReady(tup : (NSIndexPath,Any)?)
     {
-        print("In obj")
-        if let retString = ret as? String
+        let (indexPath, ret) = tup!
+        if(indexPath.section == 0 && indexPath.row == 0)
         {
-            actionSource.options = (retString, actionSource.options.1)
+            actionSource.options = (ret as! String, actionSource.options.1)
             self.tableView.reloadData()
         }
-        if let retAction = ret as? Executable
+        else if(indexPath.section == 1)
         {
-            print("In data reload")
-            actionSource.actions.append(retAction)
-            self.tableView.reloadData()
+            if(indexPath.row == actionSource.actions.count)
+            {
+                actionSource.actions.append(ret as! Executable)
+            }
+            else
+            {
+                actionSource.actions[indexPath.row] = ret as! Executable
+            }
         }
+        self.tableView.reloadData()
     }
 }

@@ -20,7 +20,7 @@ class CFTextViewController: CFViewController
     
     func saveText()
     {
-        callbackDelegate!.objIsReady(entryTextField.text)
+        callbackDelegate!.objIsReady((indexPath!,entryTextField.text))
         navigationController?.popViewControllerAnimated(true)
     }
     

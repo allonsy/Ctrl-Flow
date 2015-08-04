@@ -11,4 +11,5 @@ import UIKit
 class CFViewController: UIViewController
 {
     var callbackDelegate : CallbackWhenReadyDelegate? = nil
+    var indexPath : NSIndexPath? = nil
 }

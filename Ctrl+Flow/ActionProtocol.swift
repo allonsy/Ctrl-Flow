@@ -17,7 +17,7 @@ protocol Executable
 
 protocol CallbackWhenReadyDelegate : class
 {
-    func objIsReady(Any?) -> ()
+    func objIsReady((NSIndexPath,Any)?) -> ()
 }
 
 protocol callBackObject : class

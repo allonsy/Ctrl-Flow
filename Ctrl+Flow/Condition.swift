@@ -11,6 +11,7 @@ import UIKit
 
 class Condition
 {
+    var name = "Condition"
     var arg : Any? = nil
     var executeBlock : (Any?) -> Any? = { (_ : Any?) -> Any? in return nil }
     var argumentPickerVC : CFViewController?

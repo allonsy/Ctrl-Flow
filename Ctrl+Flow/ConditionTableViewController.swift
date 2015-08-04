@@ -12,6 +12,7 @@ class ConditionTableViewController: UITableViewController,CallbackWhenReadyDeleg
 {
     var callbackDelegate : CallbackWhenReadyDelegate? = nil
     let dataController =  ConditionDataController()
+    var cfIndexPath : NSIndexPath? = nil
     
     override func loadView() {
         tableView = UITableView()
@@ -30,7 +31,7 @@ class ConditionTableViewController: UITableViewController,CallbackWhenReadyDeleg
         let newCondition = selectedCondition.returnCondition()
         if(newCondition.argumentPickerVC == nil)
         {
-            objIsReady(newCondition)
+            objIsReady((cfIndexPath!,newCondition))
         }
         else
         {
@@ -39,10 +40,10 @@ class ConditionTableViewController: UITableViewController,CallbackWhenReadyDeleg
         }
     }
     
-    func objIsReady(ret: Any?)
+    func objIsReady(tup : (NSIndexPath,Any)?)
     {
-        callbackDelegate?.objIsReady(ret)
+        let (indexPath, ret) = tup!
+        callbackDelegate?.objIsReady((cfIndexPath!, ret))
         self.navigationController?.popViewControllerAnimated(true)
-        
     }
 }

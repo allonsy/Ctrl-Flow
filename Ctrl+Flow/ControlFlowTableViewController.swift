@@ -12,9 +12,11 @@ class ControlFlowTableViewController: UITableViewController,CallbackWhenReadyDel
 {
     var callbackDelegate : CallbackWhenReadyDelegate? = nil
     var dataController = ControlFlowDataController()
+    var indexPath : NSIndexPath? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Add a Control Flow"
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +44,10 @@ class ControlFlowTableViewController: UITableViewController,CallbackWhenReadyDel
         let newControl = selectedControl.returnControlFlow()
         if(newControl.controlFlowPickerVC == nil)
         {
-            objIsReady(newControl)
+            let editCFVC = EditControlFlowTableViewController(controlFlow: dataController.controlFlows[indexPath.row].returnControlFlow())
+            editCFVC.callbackDelegate = self
+            editCFVC.indexPath = indexPath
+            navigationController?.pushViewController(editCFVC, animated: true)
         }
         else
         {
@@ -51,9 +56,9 @@ class ControlFlowTableViewController: UITableViewController,CallbackWhenReadyDel
         }
     }
     
-    func objIsReady(ret: Any?)
+    func objIsReady(tup : (NSIndexPath,Any)?)
     {
-        callbackDelegate?.objIsReady(ret)
+        callbackDelegate?.objIsReady(tup)
         navigationController?.popViewControllerAnimated(true)
     }
 

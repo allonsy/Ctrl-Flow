@@ -27,6 +27,8 @@
 		73C3DFE81B71578700FC6745 /* ConditionDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFE71B71578700FC6745 /* ConditionDataController.swift */; };
 		73C3DFEA1B715AF000FC6745 /* ControlFlowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFE91B715AF000FC6745 /* ControlFlowTableViewController.swift */; };
 		73C3DFEE1B715C9300FC6745 /* ControlFlowDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFED1B715C9300FC6745 /* ControlFlowDataController.swift */; };
+		73C3DFF01B71607F00FC6745 /* EditControlFlowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFEF1B71607F00FC6745 /* EditControlFlowTableViewController.swift */; };
+		73C3DFF21B7160C300FC6745 /* EditControlFlowDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFF11B7160C300FC6745 /* EditControlFlowDataController.swift */; };
 		73F194531B6994D3009DD6C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F194521B6994D3009DD6C4 /* AppDelegate.swift */; };
 		73F194551B6994D3009DD6C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F194541B6994D3009DD6C4 /* ViewController.swift */; };
 		73F194581B6994D3009DD6C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F194561B6994D3009DD6C4 /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		73C3DFE71B71578700FC6745 /* ConditionDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionDataController.swift; sourceTree = "<group>"; };
 		73C3DFE91B715AF000FC6745 /* ControlFlowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlowTableViewController.swift; sourceTree = "<group>"; };
 		73C3DFED1B715C9300FC6745 /* ControlFlowDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlowDataController.swift; sourceTree = "<group>"; };
+		73C3DFEF1B71607F00FC6745 /* EditControlFlowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditControlFlowTableViewController.swift; sourceTree = "<group>"; };
+		73C3DFF11B7160C300FC6745 /* EditControlFlowDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditControlFlowDataController.swift; sourceTree = "<group>"; };
 		73F1944D1B6994D3009DD6C4 /* Ctrl+Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ctrl+Flow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F194511B6994D3009DD6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73F194521B6994D3009DD6C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				7383C4B91B6FF0CF00F20D18 /* ActionDataController.swift */,
 				73C3DFE71B71578700FC6745 /* ConditionDataController.swift */,
 				73C3DFED1B715C9300FC6745 /* ControlFlowDataController.swift */,
+				73C3DFF11B7160C300FC6745 /* EditControlFlowDataController.swift */,
 			);
 			name = "Data Sources";
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				7340B8F61B701423003936F8 /* CFTextViewController.xib */,
 				73C3DFE51B7154BB00FC6745 /* ConditionTableViewController.swift */,
 				73C3DFE91B715AF000FC6745 /* ControlFlowTableViewController.swift */,
+				73C3DFEF1B71607F00FC6745 /* EditControlFlowTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -332,6 +338,7 @@
 				7340B8F71B701423003936F8 /* CFTextViewController.swift in Sources */,
 				9754E22B1B6D6D97000EA6DF /* CFRecipeSwitch.swift in Sources */,
 				7383C4BA1B6FF0CF00F20D18 /* ActionDataController.swift in Sources */,
+				73C3DFF01B71607F00FC6745 /* EditControlFlowTableViewController.swift in Sources */,
 				73C3DFEA1B715AF000FC6745 /* ControlFlowTableViewController.swift in Sources */,
 				730E3E561B6C1C7700F79D4F /* EditRecipeDataController.swift in Sources */,
 				73C3DFE61B7154BB00FC6745 /* ConditionTableViewController.swift in Sources */,
@@ -347,6 +354,7 @@
 				733E93181B6AD0E700668297 /* ActionProtocol.swift in Sources */,
 				7383C4B81B6FF04400F20D18 /* ActionViewController.swift in Sources */,
 				7383C4B61B6FE85C00F20D18 /* CFGlobal.swift in Sources */,
+				73C3DFF21B7160C300FC6745 /* EditControlFlowDataController.swift in Sources */,
 				7340B8FA1B702B5D003936F8 /* CFViewController.swift in Sources */,
 				73C3DFE81B71578700FC6745 /* ConditionDataController.swift in Sources */,
 				730E3E521B6BF0BF00F79D4F /* RecipeDataController.swift in Sources */,
