@@ -24,7 +24,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
             actionSource.thisRecipe = thisRecipe
             actionSource.actions = thisRecipe!.actions
             actionSource.options.0 = thisRecipe!.name
-            actionSource.options.1 = thisRecipe!.activated
+            actionSource.options.1 = thisRecipe!.continuous
         }
         self.tableView.dataSource = actionSource
         self.tableView.delegate = self
@@ -50,8 +50,6 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
     func saveButtonPressed()
     {
         let retRecipe : Recipe
-        let temp : UISwitch = actionSource.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 1, inSection: 0)).accessoryView! as! UISwitch
-        actionSource.options.1 = temp.on
         if(thisRecipe == nil)
         {
             retRecipe = Recipe(name: actionSource.options.0, actions: actionSource.actions, continuous: actionSource.options.1)
@@ -59,10 +57,10 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
         }
         else
         {
+            print("\n\ncont is: \(actionSource.options.1)")
             retRecipe = thisRecipe!
             retRecipe.name = actionSource.options.0
             retRecipe.continuous = actionSource.options.1
-            print("Cont is: \(actionSource.options.1)")
             retRecipe.actions = actionSource.actions
             callBackDelegate!.objIsReady((indexPath!,retRecipe))
         }

@@ -12,4 +12,5 @@ class CFViewController: UIViewController
 {
     var callbackDelegate : CallbackWhenReadyDelegate? = nil
     var indexPath : NSIndexPath? = nil
+    var thisObj : Any? = nil
 }

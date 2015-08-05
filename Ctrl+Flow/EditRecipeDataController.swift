@@ -26,7 +26,7 @@ class EditRecipeDataController : NSObject,UITableViewDataSource
     {
         thisRecipe = recipe
         actions = thisRecipe!.actions
-        options = (thisRecipe!.name,thisRecipe!.activated)
+        options = (thisRecipe!.name,thisRecipe!.continuous)
     }
     
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,11 +62,19 @@ class EditRecipeDataController : NSObject,UITableViewDataSource
             retCell.textLabel?.text = "Continuous"
             let contSwitch = UISwitch()
             contSwitch.on = options.1
+            contSwitch.addTarget(self, action: "switchPressed", forControlEvents: UIControlEvents.TouchUpInside)
             retCell.accessoryView = contSwitch
         default:
             break;
         }
         return retCell
+    }
+    
+    func switchPressed()
+    {
+        options.1 = !options.1
+        print("cont is :\(options.1)")
+
     }
     
     func getCellForAction(act : Executable) -> UITableViewCell
