@@ -15,6 +15,8 @@ class Condition
     var arg : Any? = nil
     var executeBlock : (Any?) -> Any? = { (_ : Any?) -> Any? in return nil }
     var argumentPickerVC : CFViewController?
+    //stores all information necessary from previous runs of the condition
+    var stack : [Any?] = [Any?]()
     
     func getCondition () -> Any?
     {

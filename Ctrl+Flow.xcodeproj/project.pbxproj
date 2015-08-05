@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		233CBDC01B71907500547DEA /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CBDBF1B71907500547DEA /* Actions.swift */; };
+		233CBDC21B71907E00547DEA /* ControlFlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CBDC11B71907E00547DEA /* ControlFlows.swift */; };
+		233CBDC41B71908900547DEA /* Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CBDC31B71908900547DEA /* Conditions.swift */; };
 		730E3E4C1B6BEC5E00F79D4F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730E3E4B1B6BEC5E00F79D4F /* Recipe.swift */; };
 		730E3E4E1B6BEE9800F79D4F /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730E3E4D1B6BEE9800F79D4F /* RecipeViewController.swift */; };
 		730E3E521B6BF0BF00F79D4F /* RecipeDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730E3E511B6BF0BF00F79D4F /* RecipeDataController.swift */; };
@@ -50,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		233CBDBF1B71907500547DEA /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		233CBDC11B71907E00547DEA /* ControlFlows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlows.swift; sourceTree = "<group>"; };
+		233CBDC31B71908900547DEA /* Conditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conditions.swift; sourceTree = "<group>"; };
 		730E3E4B1B6BEC5E00F79D4F /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		730E3E4D1B6BEE9800F79D4F /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		730E3E511B6BF0BF00F79D4F /* RecipeDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDataController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		233CBDBE1B71905200547DEA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				233CBDBF1B71907500547DEA /* Actions.swift */,
+				233CBDC11B71907E00547DEA /* ControlFlows.swift */,
+				233CBDC31B71908900547DEA /* Conditions.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		730E3E4F1B6BF06E00F79D4F /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +216,7 @@
 				7383C4B51B6FE85C00F20D18 /* CFGlobal.swift */,
 				73F194591B6994D3009DD6C4 /* Images.xcassets */,
 				73F1945B1B6994D3009DD6C4 /* LaunchScreen.xib */,
+				233CBDBE1B71905200547DEA /* Components */,
 				731610601B6AF22B00966D26 /* Resources */,
 				7316105C1B6AE2FC00966D26 /* Utilities */,
 				73F194501B6994D3009DD6C4 /* Supporting Files */,
@@ -354,7 +371,10 @@
 				733E93181B6AD0E700668297 /* ActionProtocol.swift in Sources */,
 				7383C4B81B6FF04400F20D18 /* ActionViewController.swift in Sources */,
 				7383C4B61B6FE85C00F20D18 /* CFGlobal.swift in Sources */,
+				233CBDC21B71907E00547DEA /* ControlFlows.swift in Sources */,
+				233CBDC41B71908900547DEA /* Conditions.swift in Sources */,
 				73C3DFF21B7160C300FC6745 /* EditControlFlowDataController.swift in Sources */,
+				233CBDC01B71907500547DEA /* Actions.swift in Sources */,
 				7340B8FA1B702B5D003936F8 /* CFViewController.swift in Sources */,
 				73C3DFE81B71578700FC6745 /* ConditionDataController.swift in Sources */,
 				730E3E521B6BF0BF00F79D4F /* RecipeDataController.swift in Sources */,
