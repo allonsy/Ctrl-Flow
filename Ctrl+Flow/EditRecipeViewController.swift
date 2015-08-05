@@ -74,7 +74,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
     {
         let actionVC = ActionViewController()
         actionVC.callbackDelegate = self
-        actionVC.cfIndexPath = NSIndexPath(forRow: actionSource.actions.count, inSection: 1)
+        actionVC.indexPath = NSIndexPath(forRow: actionSource.actions.count, inSection: 1)
         self.navigationController?.pushViewController(actionVC, animated: true)
     }
     
@@ -94,9 +94,9 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
     //MARK: UITableViewDelegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.indexAtPosition(0) == 0)
+        if(indexPath.section == 0)
         {
-            if(indexPath.indexAtPosition(1) == 0)
+            if(indexPath.row == 0)
             {
                 let nameVC = CFTextViewController(nibName:"CFTextViewController", bundle:nil)
                 nameVC.callbackDelegate = self
@@ -110,6 +110,46 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
                 }
                 nameVC.indexPath = NSIndexPath(forRow: 0, inSection: 0)
                 navigationController?.pushViewController(nameVC, animated: true)
+            }
+        }
+        else
+        {
+            let selectedExec = actionSource.actions[indexPath.row]
+            if let selectedAction = selectedExec as? Action
+            {
+                if(selectedAction.argumentPickerVC == nil)
+                {
+                    let actionVC = ActionViewController()
+                    actionVC.callbackDelegate = self
+                    actionVC.indexPath = indexPath
+                    self.navigationController?.pushViewController(actionVC, animated: true)
+                }
+                else
+                {
+                    let actionVC = selectedAction.argumentPickerVC!
+                    actionVC.callbackDelegate = self
+                    actionVC.indexPath = indexPath
+                    actionVC.thisObj = selectedAction
+                    navigationController?.pushViewController(actionVC, animated: true)
+                }
+            }
+            else if let selectedControl = selectedExec as? ControlFlow
+            {
+                if(selectedControl.controlFlowPickerVC == nil)
+                {
+                    let controlVC = EditControlFlowTableViewController(controlFlow: selectedControl)
+                    controlVC.callbackDelegate = self
+                    controlVC.indexPath = indexPath
+                    self.navigationController?.pushViewController(controlVC, animated: true)
+                }
+                else
+                {
+                    let controlVC = selectedControl.controlFlowPickerVC!
+                    controlVC.callbackDelegate = self
+                    controlVC.indexPath = indexPath
+                    controlVC.thisObj = selectedControl
+                    navigationController?.pushViewController(controlVC, animated: true)
+                }
             }
         }
     }

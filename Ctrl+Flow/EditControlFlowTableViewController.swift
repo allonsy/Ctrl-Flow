@@ -54,7 +54,7 @@ class EditControlFlowTableViewController: UITableViewController,CallbackWhenRead
     {
         let actionVC = ActionViewController()
         actionVC.callbackDelegate = self
-        actionVC.cfIndexPath = NSIndexPath(forRow: dataController.actions.count, inSection: 1)
+        actionVC.indexPath = NSIndexPath(forRow: dataController.actions.count, inSection: 1)
         self.navigationController?.pushViewController(actionVC, animated: true)
     }
     
@@ -101,6 +101,78 @@ class EditControlFlowTableViewController: UITableViewController,CallbackWhenRead
     func genToolBarSpacer() -> UIBarButtonItem
     {
         return UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if(indexPath.section == 0)
+        {
+            if(dataController.condition == nil)
+            {
+                let conditionVC = ConditionTableViewController()
+                conditionVC.callbackDelegate = self
+                conditionVC.indexPath = indexPath
+                navigationController?.pushViewController(conditionVC, animated: true)
+            }
+            else
+            {
+                let selectedCondition = dataController.condition!
+                if(selectedCondition.argumentPickerVC == nil)
+                {
+                    let conditionVC = ConditionTableViewController()
+                    conditionVC.callbackDelegate = self
+                    conditionVC.indexPath = indexPath
+                    navigationController?.pushViewController(conditionVC, animated: true)
+                }
+                else
+                {
+                    let conditionVC = selectedCondition.argumentPickerVC!
+                    conditionVC.callbackDelegate = self
+                    conditionVC.indexPath = indexPath
+                    navigationController?.pushViewController(conditionVC, animated: true)
+                }
+            }
+        }
+        else
+        {
+            let selectedExec = dataController.actions[indexPath.row]
+            if let selectedAction = selectedExec as? Action
+            {
+                if(selectedAction.argumentPickerVC == nil)
+                {
+                    let actionVC = ActionViewController()
+                    actionVC.callbackDelegate = self
+                    actionVC.indexPath = indexPath
+                    navigationController?.pushViewController(actionVC, animated: true)
+                }
+                else
+                {
+                    let actionVC = selectedAction.argumentPickerVC!
+                    actionVC.callbackDelegate = self
+                    actionVC.indexPath = indexPath
+                    actionVC.thisObj = selectedAction
+                    navigationController?.pushViewController(actionVC, animated: true)
+                }
+            }
+            else if let selectedControl = selectedExec as? ControlFlow
+            {
+                if(selectedControl.controlFlowPickerVC == nil)
+                {
+                    let editControlVC = EditControlFlowTableViewController(controlFlow: selectedControl)
+                    editControlVC.callbackDelegate = self
+                    editControlVC.indexPath = indexPath
+                    navigationController?.pushViewController(editControlVC, animated: true)
+                }
+                else
+                {
+                    let editControlVC = selectedControl.controlFlowPickerVC!
+                    editControlVC.callbackDelegate = self
+                    editControlVC.thisObj = selectedControl
+                    editControlVC.indexPath = indexPath
+                    navigationController?.pushViewController(editControlVC, animated: true)
+                }
+            }
+        }
     }
 
 }
