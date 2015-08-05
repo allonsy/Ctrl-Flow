@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import Foundation
 import AVFoundation
+import Foundation
+
 
 class CFGlobal
 {
@@ -115,7 +116,4 @@ class CFGlobal
     static let ifelseWrap = ControlFlowWrapper(name: "if else Control Flow",
                                         description: "prototype if else Control Flow",
                                         returnControlFunc: ifelseControlFlow)
-    
-    
-    
 }
