@@ -14,6 +14,7 @@ class CFTextViewController: CFViewController
     @IBOutlet weak var entryTextField: UITextField!
     
     override func viewDidLoad() {
+        title = "Change Name"
         entryTextField.placeholder = hintText
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "saveText")
     }
