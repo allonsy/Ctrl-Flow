@@ -29,8 +29,7 @@ class ActionViewController: UITableViewController,CallbackWhenReadyDelegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        let selectedAction = dataController.actions[indexPath.indexAtPosition(0)]
-        let newAction = selectedAction.returnAction()
+        let newAction = dataController.actions[indexPath.row].returnAction()
         if(newAction.argumentPickerVC == nil)
         {
             callbackDelegate?.objIsReady((self.indexPath!,newAction))

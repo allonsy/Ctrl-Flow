@@ -17,34 +17,20 @@ class ControlFlowTableViewController: UITableViewController,CallbackWhenReadyDel
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add a Control Flow"
+        self.tableView = UITableView()
+        self.tableView.delegate = self
+        self.tableView.dataSource = dataController
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
-    }
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let selectedControl = dataController.controlFlows[indexPath.row]
         let newControl = selectedControl.returnControlFlow()
         if(newControl.controlFlowPickerVC == nil)
         {
-            let editCFVC = EditControlFlowTableViewController(controlFlow: newControl)
+            let editCFVC = EditControlFlowTableViewController()
+            editCFVC.thisControl = newControl
             editCFVC.callbackDelegate = self
             editCFVC.indexPath = self.indexPath
             navigationController?.pushViewController(editCFVC, animated: true)
@@ -58,8 +44,8 @@ class ControlFlowTableViewController: UITableViewController,CallbackWhenReadyDel
     
     func objIsReady(tup : (NSIndexPath,Any)?)
     {
-        callbackDelegate?.objIsReady(tup)
         navigationController?.popViewControllerAnimated(true)
+        callbackDelegate?.objIsReady(tup)
     }
 
     

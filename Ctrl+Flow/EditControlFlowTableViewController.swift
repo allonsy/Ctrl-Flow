@@ -13,21 +13,16 @@ class EditControlFlowTableViewController: UITableViewController,CallbackWhenRead
     var callbackDelegate : CallbackWhenReadyDelegate? = nil
     var dataController : EditControlFlowDataController = EditControlFlowDataController()
     var indexPath : NSIndexPath? = nil
-    
-    init(controlFlow : ControlFlow)
-    {
-        super.init(style:UITableViewStyle.Plain)
-        dataController.thisControl = controlFlow
-        dataController.condition = controlFlow.condition
-        dataController.actions = controlFlow.actions
-    }
-
-    required init!(coder aDecoder: NSCoder!) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var thisControl : ControlFlow? = nil
     
     override func loadView()
     {
+        if(thisControl != nil)
+        {
+            dataController.thisControl = thisControl
+            dataController.condition = thisControl!.condition
+            dataController.actions = thisControl!.actions
+        }
         tableView = UITableView()
         tableView.dataSource = dataController
         tableView.delegate = self
@@ -80,6 +75,7 @@ class EditControlFlowTableViewController: UITableViewController,CallbackWhenRead
                 dataController.actions[index.row] = ret as! Executable
             }
         }
+        tableView.reloadData()
     }
     
     func saveButtonPressed()
@@ -88,6 +84,7 @@ class EditControlFlowTableViewController: UITableViewController,CallbackWhenRead
         newCF.actions = dataController.actions
         newCF.condition = dataController.condition!
         callbackDelegate?.objIsReady((indexPath!,newCF))
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     func showAddControlFlowVC(_ :UIAlertAction!)
@@ -158,7 +155,8 @@ class EditControlFlowTableViewController: UITableViewController,CallbackWhenRead
             {
                 if(selectedControl.controlFlowPickerVC == nil)
                 {
-                    let editControlVC = EditControlFlowTableViewController(controlFlow: selectedControl)
+                    let editControlVC = EditControlFlowTableViewController()
+                    editControlVC.thisControl = selectedControl
                     editControlVC.callbackDelegate = self
                     editControlVC.indexPath = indexPath
                     navigationController?.pushViewController(editControlVC, animated: true)
@@ -174,5 +172,58 @@ class EditControlFlowTableViewController: UITableViewController,CallbackWhenRead
             }
         }
     }
-
+    func toggleEditMode(sender : UIButton!)
+    {
+        self.tableView.setEditing(!self.tableView.editing, animated: true)
+        if(self.tableView.editing)
+        {
+            sender.setTitle("Done", forState: UIControlState.Normal)
+        }
+        else
+        {
+            sender.setTitle("Edit", forState: UIControlState.Normal)
+        }
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        return 40.0
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        return getCustomSectionHeader(tableView, section : section)
+    }
+    func getCustomSectionHeader(tableView : UITableView, section : Int) -> UIView
+    {
+        let retView = UITableViewHeaderFooterView()
+        if(section == 0)
+        {
+            retView.textLabel.text = "Condition"
+        }
+        else
+        {
+            let width  = CGRectGetWidth(tableView.frame)
+            let height = self.tableView(tableView, heightForHeaderInSection: 0)
+            let magicNumber = 3.0
+            let ypos = 0.0
+            let totalHeight = CGFloat(Double(height) - ypos)
+            let totalWidth = CGFloat(50.0)
+            let xpos = Double(width) - Double(totalWidth) - magicNumber
+            retView.textLabel.text = "Actions"
+            let editButton : UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+            editButton.frame = CGRectMake(CGFloat(xpos), CGFloat(ypos), totalWidth, totalHeight)
+            editButton.clipsToBounds = true
+            editButton.setTitle("Edit", forState: UIControlState.Normal)
+            editButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Highlighted)
+            editButton.addTarget(self, action: "toggleEditMode:", forControlEvents: UIControlEvents.TouchUpInside)
+            retView.contentView.addSubview(editButton)
+        }
+        return retView
+    }
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel.textColor = UIColor.blackColor()
+    }
 }

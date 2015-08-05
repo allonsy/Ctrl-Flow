@@ -57,7 +57,6 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
         }
         else
         {
-            print("\n\ncont is: \(actionSource.options.1)")
             retRecipe = thisRecipe!
             retRecipe.name = actionSource.options.0
             retRecipe.continuous = actionSource.options.1
@@ -82,7 +81,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
     {
         let addControlFlowVC = ControlFlowTableViewController()
         addControlFlowVC.callbackDelegate = self
-        addControlFlowVC.indexPath = NSIndexPath(forRow: 1, inSection: actionSource.actions.count)
+        addControlFlowVC.indexPath = NSIndexPath(forRow: actionSource.actions.count, inSection: 1)
         navigationController?.pushViewController(addControlFlowVC, animated: true)
     }
     
@@ -137,7 +136,8 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
             {
                 if(selectedControl.controlFlowPickerVC == nil)
                 {
-                    let controlVC = EditControlFlowTableViewController(controlFlow: selectedControl)
+                    let controlVC = EditControlFlowTableViewController()
+                    controlVC.thisControl = selectedControl
                     controlVC.callbackDelegate = self
                     controlVC.indexPath = indexPath
                     self.navigationController?.pushViewController(controlVC, animated: true)
@@ -174,5 +174,59 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
             }
         }
         self.tableView.reloadData()
+    }
+    func toggleEditMode(sender : UIButton!)
+    {
+        self.tableView.setEditing(!self.tableView.editing, animated: true)
+        if(self.tableView.editing)
+        {
+            sender.setTitle("Done", forState: UIControlState.Normal)
+        }
+        else
+        {
+            sender.setTitle("Edit", forState: UIControlState.Normal)
+        }
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        return 40.0
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        return getCustomSectionHeader(tableView, section : section)
+    }
+    func getCustomSectionHeader(tableView : UITableView, section : Int) -> UIView
+    {
+        let retView = UITableViewHeaderFooterView()
+        if(section == 0)
+        {
+            retView.textLabel.text = "Options"
+        }
+        else
+        {
+            let width  = CGRectGetWidth(tableView.frame)
+            let height = self.tableView(tableView, heightForHeaderInSection: 0)
+            let magicNumber = 3.0
+            let ypos = 0.0
+            let totalHeight = CGFloat(Double(height) - ypos)
+            let totalWidth = CGFloat(50.0)
+            let xpos = Double(width) - Double(totalWidth) - magicNumber
+            retView.textLabel.text = "Actions"
+            let editButton : UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+            editButton.frame = CGRectMake(CGFloat(xpos), CGFloat(ypos), totalWidth, totalHeight)
+            editButton.clipsToBounds = true
+            editButton.setTitle("Edit", forState: UIControlState.Normal)
+            editButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Highlighted)
+            editButton.addTarget(self, action: "toggleEditMode:", forControlEvents: UIControlEvents.TouchUpInside)
+            retView.contentView.addSubview(editButton)
+        }
+        return retView
+    }
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel.textColor = UIColor.blackColor()
     }
 }

@@ -36,15 +36,9 @@ class EditControlFlowDataController: NSObject,UITableViewDataSource
         }
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if(section == 0)
-        {
-            return "Condition"
-        }
-        else
-        {
-            return "Actions"
-        }
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 2
     }
     
     func getConditonCell() -> UITableViewCell
@@ -68,4 +62,48 @@ class EditControlFlowDataController: NSObject,UITableViewDataSource
         retCell.textLabel?.text = selectedExec.getName()
         return retCell
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        if(indexPath.section == 1)
+        {
+            return true
+        }
+        return false
+    }
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        if(indexPath.section == 1)
+        {
+            return true
+        }
+        return false
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if(editingStyle == UITableViewCellEditingStyle.Delete)
+        {
+            self.actions.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
+    {
+        let index1 = sourceIndexPath.row
+        let index2 = destinationIndexPath.row
+        
+        if(index1 == index2)
+        {
+            return
+        }
+        
+        let temp = actions[index1]
+        actions.removeAtIndex(index1)
+        actions.insert(temp, atIndex: index2)
+    }
+    
+    
 }

@@ -73,8 +73,6 @@ class EditRecipeDataController : NSObject,UITableViewDataSource
     func switchPressed()
     {
         options.1 = !options.1
-        print("cont is :\(options.1)")
-
     }
     
     func getCellForAction(act : Executable) -> UITableViewCell
@@ -88,21 +86,47 @@ class EditRecipeDataController : NSObject,UITableViewDataSource
     {
         if(editingStyle == UITableViewCellEditingStyle.Delete)
         {
-            actions.removeAtIndex(indexPath.indexAtPosition(1));
+            actions.removeAtIndex(indexPath.row);
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if(section == 0)
+        
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        if(indexPath.section == 1)
         {
-            return "Options"
+            return true
         }
         else
         {
-            return "Actions"
+            return false
+        }
+    }
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        if(indexPath.section == 1)
+        {
+            return true
+        }
+        return false
+    }
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
+    {
+        let index1 = sourceIndexPath.row
+        let index2 = destinationIndexPath.row
+        if index1 == index2
+        {
+            return
+        }
+        else
+        {
+            let temp = actions[index1]
+            actions.removeAtIndex(index1)
+            actions.insert(temp, atIndex: index2)
         }
     }
 }
