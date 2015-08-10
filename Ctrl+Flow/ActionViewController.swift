@@ -38,6 +38,7 @@ class ActionViewController: UITableViewController,CallbackWhenReadyDelegate
         else
         {
             newAction.argumentPickerVC!.callbackDelegate = self
+            newAction.argumentPickerVC!.indexPath = indexPath
             newAction.argumentPickerVC!.thisObj = newAction
             navigationController?.pushViewController(newAction.argumentPickerVC!, animated: true)
         }
