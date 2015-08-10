@@ -89,6 +89,7 @@ class Actions {
     static let notification = ActionWrapper(name:"Notification",
         description:"Calls a notification",
         returnActionFunc: notificationFunc)
+    static let sleep = sleepAction
     
 }
 
