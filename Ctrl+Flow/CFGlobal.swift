@@ -104,7 +104,7 @@ class CFGlobal
             if actions.count < 2{
                 return false
             }
-            if (condition.getCondition() as! Bool) {
+            if (condition.evaluate() as! Bool) {
                 actions[0].execute()
             } else {
                 actions[1].execute()

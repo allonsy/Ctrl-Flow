@@ -27,8 +27,6 @@ class RecipeViewController: UITableViewController,CallbackWhenReadyDelegate
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addRecipe")
     }
     
-    
-    
     func addRecipe()
     {
         let addRecipeVC = EditRecipeViewController()

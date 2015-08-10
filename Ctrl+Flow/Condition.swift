@@ -18,7 +18,7 @@ class Condition
     //stores all information necessary from previous runs of the condition
     var stack : [Any?] = [Any?]()
     
-    func getCondition () -> Any?
+    func evaluate () -> Any?
     {
         return executeBlock(arg)
     }

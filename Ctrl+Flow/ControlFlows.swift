@@ -17,16 +17,21 @@ let ifelseControlFunc =
         }
         //I don't like how we just take the first 2 elements of the actions, but we'll leave it for now
         //Can we make it so we have the if condition actions on the evens, and the else condition on the odds?
-        if (condition.getCondition() as! Bool) {
+        let conditionValue : Any? = condition.evaluate()
+        if (conditionValue != nil) {
             for i in 0...actions.count{
                 if (i % 2 == 0) {
-                    actions[i].execute()
+                    let action = actions[i] as! Action
+                    action.arg = conditionValue
+                    action.execute()
                 }
             }
         } else {
             for i in 0...actions.count{
                 if (i % 2 == 1) {
-                    actions[i].execute()
+                    let action = actions[i] as! Action
+                    action.arg = conditionValue
+                    action.execute()
                 }
             }
         }
@@ -42,10 +47,14 @@ let loopWhileControlFunc =
 { () -> ControlFlow in
     let loopWhileControlFlow = ControlFlow()
     loopWhileControlFlow.executeBlock = { (condition: Condition, actions: ActionSequence) -> Bool in
-        while (condition.getCondition() as! Bool){
+        var conditionValue : Any? = condition.evaluate()
+        while (conditionValue != nil){
             for i in 0...actions.count{
-                actions[i].execute()
+                let action = actions[i] as! Action
+                action.arg = conditionValue
+                action.execute()
             }
+            conditionValue = condition.evaluate()
         }
         return false
     }
@@ -59,10 +68,14 @@ let loopUntilControlFunc =
 { () -> ControlFlow in
     let loopWhileControlFlow = ControlFlow()
     loopWhileControlFlow.executeBlock = { (condition: Condition, actions: ActionSequence) -> Bool in
-        while !(condition.getCondition() as! Bool){
+        var conditionValue : Any? = condition.evaluate()
+        while (conditionValue == nil){
             for i in 0...actions.count{
-                actions[i].execute()
+                let action = actions[i] as! Action
+                action.arg = conditionValue
+                action.execute()
             }
+            conditionValue = condition.evaluate()
         }
         return false
     }
