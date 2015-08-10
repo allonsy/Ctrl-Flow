@@ -14,6 +14,7 @@ class Action : Executable
     var arg : Any? = nil
     var executeBlock : (Any?) -> Bool = { (_ : Any?) -> Bool in return true }
     var argumentPickerVC : CFViewController?
+    
     var name = "Action"
     
     func execute() -> Bool
