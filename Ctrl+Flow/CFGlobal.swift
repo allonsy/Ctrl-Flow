@@ -16,7 +16,7 @@ class CFGlobal
     static let conditions : [ConditionWrapper] = [CFGlobal.alarmWrap]
     static let actions : [ActionWrapper] = [CFGlobal.flashwrap2, CFGlobal.flashwrap]
     static let controls : [ControlFlowWrapper] = [CFGlobal.ifelseWrap]
-    
+    static let logger = CFLogging()
     
     // This condition returns true if the current time is after the
     // time given
