@@ -98,6 +98,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
             if(indexPath.row == 0)
             {
                 let nameVC = CFTextViewController(nibName:"CFTextViewController", bundle:nil)
+                nameVC.setNewTitle("Change Name")
                 nameVC.callbackDelegate = self
                 if(actionSource.thisRecipe == nil)
                 {

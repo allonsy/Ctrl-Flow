@@ -12,9 +12,31 @@ import Foundation
 
 class CFGlobal
 {
-    static let conditions : [ConditionWrapper] = [Conditions.afterTime, Conditions.beforeTime,
-        Conditions.falseCondition, Conditions.trueCondition, Conditions.number, Conditions.inCall]
-    static let actions : [ActionWrapper] = [Actions.flashOn, Actions.flashOff, Actions.call, Actions.notification]
-    static let controls : [ControlFlowWrapper] = [ControlFlows.ifelse, ControlFlows.loopUntil, ControlFlows.loopWhile]
+    static let conditions : [ConditionWrapper] =
+    [
+        Conditions.afterTime,
+        Conditions.beforeTime,
+        Conditions.falseCondition,
+        Conditions.trueCondition,
+        Conditions.number,
+        Conditions.inCall
+    ]
+    
+    static let actions : [ActionWrapper] =
+    [
+        Actions.flashOn,
+        Actions.flashOff,
+        Actions.call,
+        Actions.notification,
+        Actions.sleep
+    ]
+    
+    static let controls : [ControlFlowWrapper] =
+    [
+        ControlFlows.ifelse,
+        ControlFlows.loopUntil,
+        ControlFlows.loopWhile
+    ]
+    
     static let logger = CFLogging()
 }

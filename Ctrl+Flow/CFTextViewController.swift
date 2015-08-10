@@ -14,8 +14,10 @@ class CFTextViewController: CFViewController
     @IBOutlet weak var entryTextField: UITextField!
     
     override func viewDidLoad() {
-        title = "Change Name"
-        entryTextField.placeholder = hintText
+        if(hintText != nil)
+        {
+            entryTextField.placeholder = hintText
+        }
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "saveText")
     }
     
@@ -23,6 +25,11 @@ class CFTextViewController: CFViewController
     {
         callbackDelegate!.objIsReady((indexPath!,entryTextField.text))
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func setNewTitle(newTitle : String)
+    {
+        title = newTitle
     }
     
 }
