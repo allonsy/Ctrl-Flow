@@ -113,9 +113,6 @@
 		233CBDBE1B71905200547DEA /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				233CBDBF1B71907500547DEA /* Actions.swift */,
-				233CBDC11B71907E00547DEA /* ControlFlows.swift */,
-				233CBDC31B71908900547DEA /* Conditions.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -214,6 +211,9 @@
 				73F194541B6994D3009DD6C4 /* ViewController.swift */,
 				73F194561B6994D3009DD6C4 /* Main.storyboard */,
 				7383C4B51B6FE85C00F20D18 /* CFGlobal.swift */,
+				233CBDBF1B71907500547DEA /* Actions.swift */,
+				233CBDC31B71908900547DEA /* Conditions.swift */,
+				233CBDC11B71907E00547DEA /* ControlFlows.swift */,
 				73F194591B6994D3009DD6C4 /* Images.xcassets */,
 				73F1945B1B6994D3009DD6C4 /* LaunchScreen.xib */,
 				233CBDBE1B71905200547DEA /* Components */,
