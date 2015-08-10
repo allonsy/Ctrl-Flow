@@ -26,6 +26,7 @@
 		7383C4B61B6FE85C00F20D18 /* CFGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B51B6FE85C00F20D18 /* CFGlobal.swift */; };
 		7383C4B81B6FF04400F20D18 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B71B6FF04400F20D18 /* ActionViewController.swift */; };
 		7383C4BA1B6FF0CF00F20D18 /* ActionDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B91B6FF0CF00F20D18 /* ActionDataController.swift */; };
+		73A3CB3A1B792E3A006365B6 /* CFLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CB391B792E3A006365B6 /* CFLogging.swift */; };
 		73C3DFE61B7154BB00FC6745 /* ConditionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFE51B7154BB00FC6745 /* ConditionTableViewController.swift */; };
 		73C3DFE81B71578700FC6745 /* ConditionDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFE71B71578700FC6745 /* ConditionDataController.swift */; };
 		73C3DFEA1B715AF000FC6745 /* ControlFlowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFE91B715AF000FC6745 /* ControlFlowTableViewController.swift */; };
@@ -72,6 +73,7 @@
 		7383C4B51B6FE85C00F20D18 /* CFGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFGlobal.swift; sourceTree = "<group>"; };
 		7383C4B71B6FF04400F20D18 /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		7383C4B91B6FF0CF00F20D18 /* ActionDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionDataController.swift; sourceTree = "<group>"; };
+		73A3CB391B792E3A006365B6 /* CFLogging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFLogging.swift; sourceTree = "<group>"; };
 		73C3DFE51B7154BB00FC6745 /* ConditionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionTableViewController.swift; sourceTree = "<group>"; };
 		73C3DFE71B71578700FC6745 /* ConditionDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionDataController.swift; sourceTree = "<group>"; };
 		73C3DFE91B715AF000FC6745 /* ControlFlowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlowTableViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				73F194721B69950B009DD6C4 /* Functional.swift */,
+				73A3CB391B792E3A006365B6 /* CFLogging.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				730E3E4C1B6BEC5E00F79D4F /* Recipe.swift in Sources */,
 				733E93181B6AD0E700668297 /* ActionProtocol.swift in Sources */,
 				7383C4B81B6FF04400F20D18 /* ActionViewController.swift in Sources */,
+				73A3CB3A1B792E3A006365B6 /* CFLogging.swift in Sources */,
 				7383C4B61B6FE85C00F20D18 /* CFGlobal.swift in Sources */,
 				233CBDC21B71907E00547DEA /* ControlFlows.swift in Sources */,
 				233CBDC41B71908900547DEA /* Conditions.swift in Sources */,
