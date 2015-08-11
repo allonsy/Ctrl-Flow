@@ -15,7 +15,7 @@ class Actions {
     { () -> Action in
         let flashAct = Action()
         flashAct.name = "Flashlight ON"
-        flashAct.executeBlock = { (_ : Any?) -> Bool in
+        flashAct.executeBlock = { (_ : Any?, _ : [Any?]) -> Bool in
             let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
             if (device.hasTorch) {
                 //probably should return false if we can't lock the device for configuration
@@ -38,7 +38,7 @@ class Actions {
     { () -> Action in
         let flashAct = Action()
         flashAct.name = "Flashlight OFF"
-        flashAct.executeBlock = { (_ : Any?) -> Bool in
+        flashAct.executeBlock = { (_ : Any?, _ : [Any?]) -> Bool in
             let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
             if (device.hasTorch) {
                 //probably should return false if we can't lock the device for configuration
@@ -62,7 +62,7 @@ class Actions {
     { () -> Action in
         let callAct = Action()
         callAct.name = "Call"
-        callAct.executeBlock = { (url: Any?) -> Bool in
+        callAct.executeBlock = { (url : Any?, _ : [Any?]) -> Bool in
             let phone_url:NSURL = NSURL(string: url as! String)!;
             return UIApplication.sharedApplication().openURL(phone_url)
         }
@@ -76,7 +76,7 @@ class Actions {
     { () -> Action in
         let notificationAct = Action()
         notificationAct.name = "Notification"
-        notificationAct.executeBlock = { (any_tuple: Any?) -> Bool in
+        notificationAct.executeBlock = { (any_tuple: Any?, _ : [Any?]) -> Bool in
             var (title, body) = any_tuple as! (String, String)
             var localNotification:UILocalNotification = UILocalNotification()
             localNotification.alertAction = title

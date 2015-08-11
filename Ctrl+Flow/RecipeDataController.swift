@@ -109,7 +109,7 @@ class RecipeDataController : NSObject,UITableViewDataSource,UITableViewDelegate 
 private func returnHello() -> Action
 {
     let helloEveryoneAction = Action()
-    func notifyHello(Any?) -> Bool
+    func notifyHello(Any?, [Any?]) -> Bool
     {
         CFGlobal.logger.notificationLog("Hello Everyone")
         return true

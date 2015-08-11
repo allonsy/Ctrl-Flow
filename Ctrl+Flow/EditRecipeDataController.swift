@@ -18,7 +18,7 @@ class EditRecipeDataController : NSObject,UITableViewDataSource
     {
         thisRecipe = nil
         actions = [Executable]()
-        options = ("Name", true)
+        options = ("", true)
 
     }
     
@@ -57,9 +57,9 @@ class EditRecipeDataController : NSObject,UITableViewDataSource
         switch index
         {
         case 0:
-            retCell.textLabel!.text = "Name: " + options.0
+            retCell.textLabel!.text = "recipe name: " + options.0
         case 1:
-            retCell.textLabel?.text = "Continuous"
+            retCell.textLabel?.text = "continuous"
             let contSwitch = UISwitch()
             contSwitch.on = options.1
             contSwitch.addTarget(self, action: "switchPressed", forControlEvents: UIControlEvents.TouchUpInside)

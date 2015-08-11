@@ -16,12 +16,13 @@ private func retSleepAction () -> Action
     (retAction.argumentPickerVC! as! CFTextViewController).hintText = "1.0"
     retAction.name = "Sleep for x seconds"
     
-    func execute(arg : Any?) -> Bool
+    func execute(arg : Any?, _ : [Any?]) -> Bool
     {
         if(arg == nil)
         {
             return true
         }
+        println(arg)
         let num = arg! as! NSString
         NSThread.sleepForTimeInterval(num.doubleValue);
         return true

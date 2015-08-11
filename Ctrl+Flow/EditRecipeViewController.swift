@@ -102,7 +102,7 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
                 nameVC.callbackDelegate = self
                 if(actionSource.thisRecipe == nil)
                 {
-                    nameVC.hintText = "Name"
+                    nameVC.hintText = "recipe name"
                 }
                 else
                 {
