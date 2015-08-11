@@ -23,11 +23,17 @@
 		7340B8F71B701423003936F8 /* CFTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340B8F51B701423003936F8 /* CFTextViewController.swift */; };
 		7340B8F81B701423003936F8 /* CFTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7340B8F61B701423003936F8 /* CFTextViewController.xib */; };
 		7340B8FA1B702B5D003936F8 /* CFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340B8F91B702B5D003936F8 /* CFViewController.swift */; };
+		735AD5051B7A9CC5009A26DF /* GoogleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 735AD5041B7A9CC5009A26DF /* GoogleTest.m */; };
+		735AD5071B7A9DCF009A26DF /* Gmail in Resources */ = {isa = PBXBuildFile; fileRef = 735AD5061B7A9DCF009A26DF /* Gmail */; };
 		7383C4B61B6FE85C00F20D18 /* CFGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B51B6FE85C00F20D18 /* CFGlobal.swift */; };
 		7383C4B81B6FF04400F20D18 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B71B6FF04400F20D18 /* ActionViewController.swift */; };
 		7383C4BA1B6FF0CF00F20D18 /* ActionDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383C4B91B6FF0CF00F20D18 /* ActionDataController.swift */; };
+		7393CC511B7A9A6E00AB42AB /* libGTLTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7393CC501B7A9A6E00AB42AB /* libGTLTouchStaticLib.a */; };
+		7393CC571B7A9C3400AB42AB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7393CC551B7A9C3400AB42AB /* Security.framework */; };
+		7393CC581B7A9C3400AB42AB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7393CC561B7A9C3400AB42AB /* SystemConfiguration.framework */; };
 		73A3CB3A1B792E3A006365B6 /* CFLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CB391B792E3A006365B6 /* CFLogging.swift */; };
 		73A3CB3E1B795A5B006365B6 /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CB3D1B795A5B006365B6 /* Sleep.swift */; };
+		73A7BAF81B7AA40100F435FD /* Headers in Resources */ = {isa = PBXBuildFile; fileRef = 73A7BAF71B7AA40100F435FD /* Headers */; };
 		73C223F61B7A73C200C0A749 /* CFSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C223F51B7A73C200C0A749 /* CFSectionHeaderView.swift */; };
 		73C3DFE61B7154BB00FC6745 /* ConditionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFE51B7154BB00FC6745 /* ConditionTableViewController.swift */; };
 		73C3DFE81B71578700FC6745 /* ConditionDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFE71B71578700FC6745 /* ConditionDataController.swift */; };
@@ -72,11 +78,19 @@
 		7340B8F51B701423003936F8 /* CFTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFTextViewController.swift; sourceTree = "<group>"; };
 		7340B8F61B701423003936F8 /* CFTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFTextViewController.xib; sourceTree = "<group>"; };
 		7340B8F91B702B5D003936F8 /* CFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFViewController.swift; sourceTree = "<group>"; };
+		735AD5021B7A9CC4009A26DF /* Ctrl+Flow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ctrl+Flow-Bridging-Header.h"; sourceTree = "<group>"; };
+		735AD5031B7A9CC5009A26DF /* GoogleTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleTest.h; sourceTree = "<group>"; };
+		735AD5041B7A9CC5009A26DF /* GoogleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleTest.m; sourceTree = "<group>"; };
+		735AD5061B7A9DCF009A26DF /* Gmail */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Gmail; path = "google-api-objectivec-client-read-only/Source/Services/Gmail"; sourceTree = "<group>"; };
 		7383C4B51B6FE85C00F20D18 /* CFGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFGlobal.swift; sourceTree = "<group>"; };
 		7383C4B71B6FF04400F20D18 /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		7383C4B91B6FF0CF00F20D18 /* ActionDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionDataController.swift; sourceTree = "<group>"; };
+		7393CC501B7A9A6E00AB42AB /* libGTLTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGTLTouchStaticLib.a; path = "google-api-objectivec-client-read-only/Source/build/Debug-iphoneos/libGTLTouchStaticLib.a"; sourceTree = "<group>"; };
+		7393CC551B7A9C3400AB42AB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7393CC561B7A9C3400AB42AB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		73A3CB391B792E3A006365B6 /* CFLogging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFLogging.swift; sourceTree = "<group>"; };
 		73A3CB3D1B795A5B006365B6 /* Sleep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
+		73A7BAF71B7AA40100F435FD /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = "Ctrl+Flow/Headers"; sourceTree = "<group>"; };
 		73C223F51B7A73C200C0A749 /* CFSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSectionHeaderView.swift; sourceTree = "<group>"; };
 		73C3DFE51B7154BB00FC6745 /* ConditionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionTableViewController.swift; sourceTree = "<group>"; };
 		73C3DFE71B71578700FC6745 /* ConditionDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionDataController.swift; sourceTree = "<group>"; };
@@ -103,6 +117,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7393CC571B7A9C3400AB42AB /* Security.framework in Frameworks */,
+				7393CC581B7A9C3400AB42AB /* SystemConfiguration.framework in Frameworks */,
+				7393CC511B7A9A6E00AB42AB /* libGTLTouchStaticLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +136,7 @@
 		233CBDBE1B71905200547DEA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7393CC591B7A9C6E00AB42AB /* Google */,
 				233CBDBF1B71907500547DEA /* Actions.swift */,
 				233CBDC31B71908900547DEA /* Conditions.swift */,
 				233CBDC11B71907E00547DEA /* ControlFlows.swift */,
@@ -186,6 +204,28 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		7393CC521B7A9AB500AB42AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73A7BAF71B7AA40100F435FD /* Headers */,
+				735AD5061B7A9DCF009A26DF /* Gmail */,
+				7393CC551B7A9C3400AB42AB /* Security.framework */,
+				7393CC561B7A9C3400AB42AB /* SystemConfiguration.framework */,
+				7393CC501B7A9A6E00AB42AB /* libGTLTouchStaticLib.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7393CC591B7A9C6E00AB42AB /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				735AD5031B7A9CC5009A26DF /* GoogleTest.h */,
+				735AD5041B7A9CC5009A26DF /* GoogleTest.m */,
+				735AD5021B7A9CC4009A26DF /* Ctrl+Flow-Bridging-Header.h */,
+			);
+			name = Google;
+			sourceTree = "<group>";
+		};
 		73C223F41B7A738900C0A749 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +240,7 @@
 				73F1944F1B6994D3009DD6C4 /* Ctrl+Flow */,
 				73F194651B6994D3009DD6C4 /* Ctrl+FlowTests */,
 				73F1944E1B6994D3009DD6C4 /* Products */,
+				7393CC521B7A9AB500AB42AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -340,9 +381,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F194581B6994D3009DD6C4 /* Main.storyboard in Resources */,
+				735AD5071B7A9DCF009A26DF /* Gmail in Resources */,
 				731610641B6AF26D00966D26 /* Localizable.strings in Resources */,
 				73F1945D1B6994D3009DD6C4 /* LaunchScreen.xib in Resources */,
 				73F1945A1B6994D3009DD6C4 /* Images.xcassets in Resources */,
+				73A7BAF81B7AA40100F435FD /* Headers in Resources */,
 				7340B8F81B701423003936F8 /* CFTextViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +408,7 @@
 				9754E22B1B6D6D97000EA6DF /* CFRecipeSwitch.swift in Sources */,
 				7383C4BA1B6FF0CF00F20D18 /* ActionDataController.swift in Sources */,
 				73C3DFF01B71607F00FC6745 /* EditControlFlowTableViewController.swift in Sources */,
+				735AD5051B7A9CC5009A26DF /* GoogleTest.m in Sources */,
 				73C3DFEA1B715AF000FC6745 /* ControlFlowTableViewController.swift in Sources */,
 				730E3E561B6C1C7700F79D4F /* EditRecipeDataController.swift in Sources */,
 				73C3DFE61B7154BB00FC6745 /* ConditionTableViewController.swift in Sources */,
@@ -517,12 +561,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Ctrl+Flow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/google-api-objectivec-client-read-only/Source/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ctrl+Flow/Ctrl+Flow-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/google-api-objectivec-client-read-only/Source/Services/Gmail/Generated\" \"$(PROJECT_DIR)/Ctrl+Flow/Headers\"";
 			};
 			name = Debug;
 		};
@@ -530,12 +586,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Ctrl+Flow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/google-api-objectivec-client-read-only/Source/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ctrl+Flow/Ctrl+Flow-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/google-api-objectivec-client-read-only/Source/Services/Gmail/Generated\" \"$(PROJECT_DIR)/Ctrl+Flow/Headers\"";
 			};
 			name = Release;
 		};
