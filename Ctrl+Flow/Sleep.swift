@@ -22,7 +22,6 @@ private func retSleepAction () -> Action
         {
             return true
         }
-        println(arg)
         let num = arg! as! NSString
         NSThread.sleepForTimeInterval(num.doubleValue);
         return true
