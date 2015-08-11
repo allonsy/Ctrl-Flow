@@ -34,7 +34,6 @@
 		73A3CB3A1B792E3A006365B6 /* CFLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CB391B792E3A006365B6 /* CFLogging.swift */; };
 		73A3CB3E1B795A5B006365B6 /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3CB3D1B795A5B006365B6 /* Sleep.swift */; };
 		73A7BAF81B7AA40100F435FD /* Headers in Resources */ = {isa = PBXBuildFile; fileRef = 73A7BAF71B7AA40100F435FD /* Headers */; };
-		73A7BAFA1B7AA91E00F435FD /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A7BAF91B7AA91E00F435FD /* GTMOAuth2ViewTouch.xib */; };
 		73C223F61B7A73C200C0A749 /* CFSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C223F51B7A73C200C0A749 /* CFSectionHeaderView.swift */; };
 		73C3DFE61B7154BB00FC6745 /* ConditionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFE51B7154BB00FC6745 /* ConditionTableViewController.swift */; };
 		73C3DFE81B71578700FC6745 /* ConditionDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3DFE71B71578700FC6745 /* ConditionDataController.swift */; };
@@ -92,7 +91,6 @@
 		73A3CB391B792E3A006365B6 /* CFLogging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFLogging.swift; sourceTree = "<group>"; };
 		73A3CB3D1B795A5B006365B6 /* Sleep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
 		73A7BAF71B7AA40100F435FD /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = "Ctrl+Flow/Headers"; sourceTree = "<group>"; };
-		73A7BAF91B7AA91E00F435FD /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "google-api-objectivec-client-read-only/Source/OAuth2/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = SOURCE_ROOT; };
 		73C223F51B7A73C200C0A749 /* CFSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSectionHeaderView.swift; sourceTree = "<group>"; };
 		73C3DFE51B7154BB00FC6745 /* ConditionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionTableViewController.swift; sourceTree = "<group>"; };
 		73C3DFE71B71578700FC6745 /* ConditionDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionDataController.swift; sourceTree = "<group>"; };
@@ -279,7 +277,6 @@
 		73F194501B6994D3009DD6C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				73A7BAF91B7AA91E00F435FD /* GTMOAuth2ViewTouch.xib */,
 				73F194511B6994D3009DD6C4 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -383,7 +380,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73A7BAFA1B7AA91E00F435FD /* GTMOAuth2ViewTouch.xib in Resources */,
 				73F194581B6994D3009DD6C4 /* Main.storyboard in Resources */,
 				735AD5071B7A9DCF009A26DF /* Gmail in Resources */,
 				731610641B6AF26D00966D26 /* Localizable.strings in Resources */,
