@@ -172,6 +172,7 @@ class EditControlFlowTableViewController: UITableViewController,CallbackWhenRead
             }
         }
     }
+    
     func toggleEditMode(sender : UIButton!)
     {
         self.tableView.setEditing(!self.tableView.editing, animated: true)
@@ -192,35 +193,20 @@ class EditControlFlowTableViewController: UITableViewController,CallbackWhenRead
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
-        return getCustomSectionHeader(tableView, section : section)
-    }
-    func getCustomSectionHeader(tableView : UITableView, section : Int) -> UIView
-    {
-        let retView = UITableViewHeaderFooterView()
+        let retView : UITableViewHeaderFooterView
         if(section == 0)
         {
+            retView = UITableViewHeaderFooterView()
             retView.textLabel.text = "Condition"
         }
         else
         {
-            let width  = CGRectGetWidth(tableView.frame)
             let height = self.tableView(tableView, heightForHeaderInSection: 0)
-            let magicNumber = 3.0
-            let ypos = 0.0
-            let totalHeight = CGFloat(Double(height) - ypos)
-            let totalWidth = CGFloat(50.0)
-            let xpos = Double(width) - Double(totalWidth) - magicNumber
-            retView.textLabel.text = "Actions"
-            let editButton : UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
-            editButton.frame = CGRectMake(CGFloat(xpos), CGFloat(ypos), totalWidth, totalHeight)
-            editButton.clipsToBounds = true
-            editButton.setTitle("Edit", forState: UIControlState.Normal)
-            editButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Highlighted)
-            editButton.addTarget(self, action: "toggleEditMode:", forControlEvents: UIControlEvents.TouchUpInside)
-            retView.contentView.addSubview(editButton)
+            retView = getCFCustomSectionHeaderView(tableView, title: "Actions", buttonTitle: "Edit", target: self, selector: "toggleEditMode:", height: height)
         }
-        return retView
+        return retView;
     }
+    
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
     {
         let header = view as! UITableViewHeaderFooterView
