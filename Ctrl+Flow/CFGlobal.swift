@@ -33,7 +33,7 @@ class CFGlobal
     
     static let controls : [ControlFlowWrapper] =
     [
-        ControlFlows.ifelse,
+        ControlFlows.ifControl,
         ControlFlows.loopUntil,
         ControlFlows.loopWhile
     ]

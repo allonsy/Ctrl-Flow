@@ -9,10 +9,10 @@
 import Foundation
 
 class ControlFlows{
-    static let  ifelseControlFunc =
+    static let  ifControlFunc =
     { () -> ControlFlow in
-        let ifelseCF = ControlFlow()
-        ifelseCF.executeBlock = { (condition: Condition, actions: ActionSequence) -> Bool in
+        let ifCF = ControlFlow()
+        ifCF.executeBlock = { (condition: Condition, actions: ActionSequence) -> Bool in
             if actions.count < 2{
                 return false
             }
@@ -21,28 +21,18 @@ class ControlFlows{
             let conditionValue : Any? = condition.evaluate()
             if (conditionValue != nil) {
                 for i in 0..<actions.count{
-                    if (i % 2 == 0) {
-                        let action = actions[i] as! Action
-                        action.arg = conditionValue
-                        action.execute()
-                    }
-                }
-            } else {
-                for i in 0..<actions.count{
-                    if (i % 2 == 1) {
-                        let action = actions[i] as! Action
-                        action.arg = conditionValue
-                        action.execute()
-                    }
+                    let action = actions[i] as! Action
+                    action.conditionArgs.append(conditionValue)
+                    action.execute()
                 }
             }
             return true
         }
-        return ifelseCF
+        return ifCF
     }
-    static let ifelse = ControlFlowWrapper(name: "if else",
-        description: "if else Control Flow",
-        returnControlFunc: ifelseControlFunc)
+    static let ifControl = ControlFlowWrapper(name: "if",
+        description: "if Control Flow",
+        returnControlFunc: ifControlFunc)
     
     static let loopWhileControlFunc =
     { () -> ControlFlow in
@@ -50,10 +40,9 @@ class ControlFlows{
         loopWhileControlFlow.executeBlock = { (condition: Condition, actions: ActionSequence) -> Bool in
             var conditionValue : Any? = condition.evaluate()
             while (conditionValue != nil){
-                println(actions.count)
                 for i in 0..<actions.count{
                     let action = actions[i] as! Action
-                    println(action.name)
+                    action.conditionArgs.append(conditionValue)
                     action.execute()
                 }
                 conditionValue = condition.evaluate()
@@ -74,7 +63,7 @@ class ControlFlows{
             while (conditionValue == nil){
                 for i in 0..<actions.count{
                     let action = actions[i] as! Action
-                    action.arg = conditionValue
+                    action.conditionArgs.append(conditionValue)
                     action.execute()
                 }
                 conditionValue = condition.evaluate()

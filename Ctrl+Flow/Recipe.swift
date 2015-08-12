@@ -14,6 +14,7 @@ class Recipe : Executable
     var actions : [Executable]
     var continuous : Bool
     var activated : Bool
+    var thread : NSThread?
     
     init(name : String, actions: [Executable], continuous : Bool)
     {
@@ -23,18 +24,9 @@ class Recipe : Executable
         self.activated = false
     }
     
-    func execute() -> Bool {
-        if(continuous)
-        {
-            while true
-            {
-                map_({ (obj : Executable) -> () in obj.execute()}, actions)
-            }
-        }
-        else
-        {
-            map_({ (obj : Executable) -> () in obj.execute()}, actions)
-        }
+    func execute() -> Bool
+    {
+        map_({ (obj : Executable) -> () in obj.execute()}, actions)
         return true
     }
     func getName() -> String

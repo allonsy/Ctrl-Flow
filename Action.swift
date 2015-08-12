@@ -12,14 +12,15 @@ import UIKit
 class Action : Executable
 {
     var arg : Any? = nil
-    var executeBlock : (Any?) -> Bool = { (_ : Any?) -> Bool in return true }
+    var conditionArgs : [Any?] = [Any?]()
+    var executeBlock : (Any?, [Any?]) -> Bool = { (_ : Any?, _ : [Any?]) -> Bool in return true }
     var argumentPickerVC : CFViewController?
     
     var name = "Action"
     
     func execute() -> Bool
     {
-        return executeBlock(arg)
+        return executeBlock(arg, conditionArgs)
     }
     
     func getName() -> String
