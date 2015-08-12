@@ -20,7 +20,7 @@ class ControlFlows{
             //Can we make it so we have the if condition actions on the evens, and the else condition on the odds?
             let conditionValue : Any? = condition.evaluate()
             if (conditionValue != nil) {
-                for i in 0...actions.count{
+                for i in 0..<actions.count{
                     if (i % 2 == 0) {
                         let action = actions[i] as! Action
                         action.arg = conditionValue
@@ -28,7 +28,7 @@ class ControlFlows{
                     }
                 }
             } else {
-                for i in 0...actions.count{
+                for i in 0..<actions.count{
                     if (i % 2 == 1) {
                         let action = actions[i] as! Action
                         action.arg = conditionValue
@@ -50,9 +50,10 @@ class ControlFlows{
         loopWhileControlFlow.executeBlock = { (condition: Condition, actions: ActionSequence) -> Bool in
             var conditionValue : Any? = condition.evaluate()
             while (conditionValue != nil){
-                for i in 0...actions.count{
+                println(actions.count)
+                for i in 0..<actions.count{
                     let action = actions[i] as! Action
-                    action.arg = conditionValue
+                    println(action.name)
                     action.execute()
                 }
                 conditionValue = condition.evaluate()
@@ -71,7 +72,7 @@ class ControlFlows{
         loopWhileControlFlow.executeBlock = { (condition: Condition, actions: ActionSequence) -> Bool in
             var conditionValue : Any? = condition.evaluate()
             while (conditionValue == nil){
-                for i in 0...actions.count{
+                for i in 0..<actions.count{
                     let action = actions[i] as! Action
                     action.arg = conditionValue
                     action.execute()

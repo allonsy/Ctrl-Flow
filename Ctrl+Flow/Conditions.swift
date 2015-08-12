@@ -84,6 +84,7 @@ class Conditions{
         numberCond.executeBlock = { (number: Any?) -> Any? in
             if (stack.count == 0){
                 var num = number as! Int
+                println(num)
                 if (num == 0){
                     return nil
                 }
@@ -93,6 +94,7 @@ class Conditions{
             }
             else {
                 var num = stack.removeAtIndex(0) as! Int
+                println(num)
                 if (num == 0){
                     return nil
                 }
@@ -105,7 +107,7 @@ class Conditions{
     }
     static let number = ConditionWrapper(name:"False Condition",
         description:"returns true n times, then returns false",
-        returnConditionFunc: beforeTimeFunc)
+        returnConditionFunc: numberFunc)
 
     static let inCallFunc =
     { () -> Condition in

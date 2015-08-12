@@ -62,8 +62,9 @@ class Actions {
     { () -> Action in
         let callAct = Action()
         callAct.name = "Call"
-        callAct.executeBlock = { (url: Any?) -> Bool in
-            let phone_url:NSURL = NSURL(string: url as! String)!;
+        callAct.executeBlock = { (number: Any?) -> Bool in
+            let url = "tel://" + (number as! String)
+            let phone_url:NSURL = NSURL(string: url)!
             return UIApplication.sharedApplication().openURL(phone_url)
         }
         return callAct

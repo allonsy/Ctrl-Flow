@@ -29,10 +29,24 @@ class RecipeViewController: UITableViewController,CallbackWhenReadyDelegate
     
     func addRecipe()
     {
+        let whileLoop = ControlFlows.loopWhile.returnControlFlow()
+        let number = Conditions.number.returnCondition()
+        number.arg = 5
+        let sleepAction = Actions.sleep.returnAction()
+        sleepAction.arg = 1.0
+        let actions : [Executable] = [sleepAction, Actions.flashOn.returnAction(), sleepAction, Actions.flashOff.returnAction()]
+        
+        whileLoop.condition = number
+        whileLoop.actions = actions
+    
+        let recipe = Recipe(name: "whatever", actions: [whileLoop], continuous: false)
+        recipe.execute()
+        /*
         let addRecipeVC = EditRecipeViewController()
         addRecipeVC.indexPath = NSIndexPath(forRow: recipeSource.recipes.count, inSection: 0)
         addRecipeVC.callBackDelegate=self
         self.navigationController?.pushViewController(addRecipeVC, animated: true)
+        */
     }
     
     override func viewWillAppear(animated: Bool) {
