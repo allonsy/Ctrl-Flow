@@ -12,24 +12,38 @@ class CFTitleAndTextViewController: CFViewController
 {
     
     var titleHint : String? = nil
+    var titleLabelText : String? = nil
+    var textLabelText : String? = nil
 
-    
-    @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var textLabel: UILabel!
-    @IBOutlet weak var textField: UITextView!
+    @IBOutlet weak var textText: UITextView!
     
     override func viewDidLoad() {
+        if respondsToSelector("edgesForExtendedLayout"){
+            edgesForExtendedLayout = UIRectEdge.None
+        }
+        
         if(titleHint != nil)
         {
-            titleField.placeholder = titleHint
+            titleText.placeholder = titleHint
+        }
+        if(titleLabelText != nil)
+        {
+            titleLabel.text = titleLabelText
+        }
+        if(textLabelText != nil)
+        {
+            textLabel.text = textLabelText
         }
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "saveTexts")
     }
     
     func saveTexts()
     {
-        callbackDelegate!.objIsReady((indexPath!,(textField.text, titleField.text)))
+        let tup : (String, String) = (titleText.text, textText.text)
+        callbackDelegate!.objIsReady((indexPath!, tup))
         navigationController?.popViewControllerAnimated(true)
     }
     

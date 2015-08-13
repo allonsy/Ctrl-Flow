@@ -56,8 +56,9 @@ class RecipeDataController : NSObject,UITableViewDataSource,UITableViewDelegate 
     {
         if(editingStyle == UITableViewCellEditingStyle.Delete)
         {
-            recipes.removeAtIndex(indexPath.indexAtPosition(1));
+            recipes.removeAtIndex(indexPath.row);
         }
+        tableView.reloadData()
     }
     
     func toggleRecipeOn(sender : AnyObject)

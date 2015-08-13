@@ -117,21 +117,10 @@ class EditRecipeViewController: UITableViewController,CallbackWhenReadyDelegate
             let selectedExec = actionSource.actions[indexPath.row]
             if let selectedAction = selectedExec as? Action
             {
-                if(selectedAction.argumentPickerVC == nil)
-                {
-                    let actionVC = ActionViewController()
-                    actionVC.callbackDelegate = self
-                    actionVC.indexPath = indexPath
-                    self.navigationController?.pushViewController(actionVC, animated: true)
-                }
-                else
-                {
-                    let actionVC = selectedAction.argumentPickerVC!
-                    actionVC.callbackDelegate = self
-                    actionVC.indexPath = indexPath
-                    actionVC.thisObj = selectedAction
-                    navigationController?.pushViewController(actionVC, animated: true)
-                }
+                let actionVC = ActionViewController()
+                actionVC.callbackDelegate = self
+                actionVC.indexPath = indexPath
+                self.navigationController?.pushViewController(actionVC, animated: true)
             }
             else if let selectedControl = selectedExec as? ControlFlow
             {

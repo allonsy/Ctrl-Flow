@@ -12,6 +12,7 @@
 		233CBDC01B71907500547DEA /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CBDBF1B71907500547DEA /* Actions.swift */; };
 		233CBDC21B71907E00547DEA /* ControlFlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CBDC11B71907E00547DEA /* ControlFlows.swift */; };
 		233CBDC41B71908900547DEA /* Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CBDC31B71908900547DEA /* Conditions.swift */; };
+		233CBE3A1B7BC21300547DEA /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CBE391B7BC21300547DEA /* Notification.swift */; };
 		730E3E4C1B6BEC5E00F79D4F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730E3E4B1B6BEC5E00F79D4F /* Recipe.swift */; };
 		730E3E4E1B6BEE9800F79D4F /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730E3E4D1B6BEE9800F79D4F /* RecipeViewController.swift */; };
 		730E3E521B6BF0BF00F79D4F /* RecipeDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730E3E511B6BF0BF00F79D4F /* RecipeDataController.swift */; };
@@ -63,6 +64,7 @@
 		233CBDBF1B71907500547DEA /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		233CBDC11B71907E00547DEA /* ControlFlows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlows.swift; sourceTree = "<group>"; };
 		233CBDC31B71908900547DEA /* Conditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conditions.swift; sourceTree = "<group>"; };
+		233CBE391B7BC21300547DEA /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		730E3E4B1B6BEC5E00F79D4F /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		730E3E4D1B6BEE9800F79D4F /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		730E3E511B6BF0BF00F79D4F /* RecipeDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDataController.swift; sourceTree = "<group>"; };
@@ -126,8 +128,8 @@
 				233CBDBF1B71907500547DEA /* Actions.swift */,
 				233CBDC31B71908900547DEA /* Conditions.swift */,
 				233CBDC11B71907E00547DEA /* ControlFlows.swift */,
+				233CBE391B7BC21300547DEA /* Notification.swift */,
 				73A3CB3D1B795A5B006365B6 /* Sleep.swift */,
-        af565dc2c1f38271ca157e9558989b4c43035a36
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -389,6 +391,7 @@
 				733E93181B6AD0E700668297 /* ActionProtocol.swift in Sources */,
 				7383C4B81B6FF04400F20D18 /* ActionViewController.swift in Sources */,
 				73A3CB3A1B792E3A006365B6 /* CFLogging.swift in Sources */,
+				233CBE3A1B7BC21300547DEA /* Notification.swift in Sources */,
 				7383C4B61B6FE85C00F20D18 /* CFGlobal.swift in Sources */,
 				233CBDC21B71907E00547DEA /* ControlFlows.swift in Sources */,
 				233CBDC41B71908900547DEA /* Conditions.swift in Sources */,
