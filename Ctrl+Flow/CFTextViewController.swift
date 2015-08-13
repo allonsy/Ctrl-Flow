@@ -11,6 +11,7 @@ import UIKit
 class CFTextViewController: CFViewController
 {
     var hintText : String? = nil
+    var defaultReturn : String? = nil
     @IBOutlet weak var entryTextField: UITextField!
     
     override func viewDidLoad() {
@@ -23,9 +24,12 @@ class CFTextViewController: CFViewController
     
     func saveText()
     {
-        println(callbackDelegate!)
-        println(indexPath)
-        callbackDelegate!.objIsReady((indexPath!,entryTextField.text))
+        if (entryTextField.text.isEmpty){
+            callbackDelegate!.objIsReady((indexPath!,defaultReturn))
+        }
+        else {
+            callbackDelegate!.objIsReady((indexPath!,entryTextField.text))
+        }
         navigationController?.popViewControllerAnimated(true)
     }
     

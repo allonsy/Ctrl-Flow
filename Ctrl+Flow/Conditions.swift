@@ -92,6 +92,7 @@ class Conditions{
         numberCond.argumentPickerVC = CFTextViewController(nibName:"CFTextViewController", bundle:nil)
         numberCond.argumentPickerVC?.title = "How many times?"
         (numberCond.argumentPickerVC! as! CFTextViewController).hintText = "1"
+        (numberCond.argumentPickerVC! as! CFTextViewController).defaultReturn = "1"
         numberCond.name = "Number Condition"
        
         var stack = numberCond.stack

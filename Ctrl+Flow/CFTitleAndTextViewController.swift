@@ -42,9 +42,20 @@ class CFTitleAndTextViewController: CFViewController
     
     func saveTexts()
     {
-        let tup : (String, String) = (titleText.text, textText.text)
-        callbackDelegate!.objIsReady((indexPath!, tup))
-        navigationController?.popViewControllerAnimated(true)
+        if titleText.text.isEmpty && textText.text.isEmpty{
+            CFGlobal.logger.notificationLog("Title and Body can't be blank!")
+        }
+        else if titleText.text.isEmpty {
+            CFGlobal.logger.notificationLog("Title can't be blank!")
+        }
+        else if textText.text.isEmpty {
+            CFGlobal.logger.notificationLog("Body can't be blank!")
+        }
+        else {
+            let tup : (String, String) = (titleText.text, textText.text)
+            callbackDelegate!.objIsReady((indexPath!, tup))
+            navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     func setNewTitle(newTitle : String)

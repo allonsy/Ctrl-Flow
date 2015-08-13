@@ -104,31 +104,31 @@ class EditControlFlowTableViewController: UITableViewController,CallbackWhenRead
     {
         if(indexPath.section == 0)
         {
-            if(dataController.condition == nil)
-            {
+//            if(dataController.condition == nil)
+//            {
                 let conditionVC = ConditionTableViewController()
                 conditionVC.callbackDelegate = self
                 conditionVC.indexPath = indexPath
                 navigationController?.pushViewController(conditionVC, animated: true)
-            }
-            else
-            {
-                let selectedCondition = dataController.condition!
-                if(selectedCondition.argumentPickerVC == nil)
-                {
-                    let conditionVC = ConditionTableViewController()
-                    conditionVC.callbackDelegate = self
-                    conditionVC.indexPath = indexPath
-                    navigationController?.pushViewController(conditionVC, animated: true)
-                }
-                else
-                {
-                    let conditionVC = selectedCondition.argumentPickerVC!
-                    conditionVC.callbackDelegate = self
-                    conditionVC.indexPath = indexPath
-                    navigationController?.pushViewController(conditionVC, animated: true)
-                }
-            }
+//            }
+//            else
+//            {
+//                let selectedCondition = dataController.condition!
+//                if(selectedCondition.argumentPickerVC == nil)
+//                {
+//                let conditionVC = ConditionTableViewController()
+//                conditionVC.callbackDelegate = self
+//                conditionVC.indexPath = indexPath
+//                navigationController?.pushViewController(conditionVC, animated: true)
+//                }
+//                else
+//                {
+//                    let conditionVC = selectedCondition.argumentPickerVC!
+//                    conditionVC.callbackDelegate = self
+//                    conditionVC.indexPath = indexPath
+//                    navigationController?.pushViewController(conditionVC, animated: true)
+//                }
+//            }
         }
         else
         {

@@ -17,13 +17,20 @@ private func retNotifAction () -> Action
     (retAction.argumentPickerVC as! CFTitleAndTextViewController).textLabelText = "Body: "
     (retAction.argumentPickerVC as! CFTitleAndTextViewController).titleHint = "notification title"
     (retAction.argumentPickerVC as! CFTitleAndTextViewController).setNewTitle("Create New Notification")
-    retAction.name = "push a notification"
+    retAction.name = { (arg : Any?) -> String in
+        if arg == nil {
+            return "Notification"
+        }
+        let (title, _ ) = arg as! (String, String)
+        println(title)
+        return "Notification - " + title
+    }
     
     func execute(arg : Any?, _ : [Any?]) -> Bool
     {
         var (title, body) = arg as! (String, String)
         var localNotification:UILocalNotification = UILocalNotification()
-        localNotification.alertAction = title
+        localNotification.alertTitle = title
         localNotification.alertBody = body
         UIApplication.sharedApplication().presentLocalNotificationNow(localNotification)
         return true

@@ -16,7 +16,7 @@ class Action : Executable
     var executeBlock : (Any?, [Any?]) -> Bool = { (_ : Any?, _ : [Any?]) -> Bool in return true }
     var argumentPickerVC : CFViewController?
     
-    var name = "Action"
+    var name : (Any?) -> String = { (_ : Any?) -> String in return "Action" }
     
     func execute() -> Bool
     {
@@ -25,7 +25,7 @@ class Action : Executable
     
     func getName() -> String
     {
-        return name
+        return name(arg)
     }
 }
 

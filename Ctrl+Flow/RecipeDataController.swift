@@ -33,7 +33,7 @@ class RecipeDataController : NSObject,UITableViewDataSource,UITableViewDelegate 
     func getCellForRecipe(rec : Recipe) -> UITableViewCell
     {
         let retCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "recipeCell")
-        retCell.textLabel!.text = rec.name
+        retCell.textLabel!.text = rec.getName()
         if(rec.continuous)
         {
             let activateSwitch = CFRecipeSwitch(rec: rec)
@@ -137,6 +137,6 @@ private func returnHello() -> Action
         return true
     }
     helloEveryoneAction.executeBlock = notifyHello
-    helloEveryoneAction.name = "Hello Everyone In The World"
+    helloEveryoneAction.name = { (_ : Any?) -> String in return "Hello Everyone In The World"}
     return helloEveryoneAction
 }

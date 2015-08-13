@@ -18,8 +18,13 @@ class Actions {
         flashAct.argumentPickerVC = CFTextViewController(nibName:"CFTextViewController", bundle:nil)
         flashAct.argumentPickerVC?.title = "Intensity"
         (flashAct.argumentPickerVC! as! CFTextViewController).hintText = "1.0"
-        flashAct.name = "Flashlight ON"
-
+        (flashAct.argumentPickerVC! as! CFTextViewController).defaultReturn = "1.0"
+        flashAct.name = { (arg : Any?) -> String in
+            if arg == nil {
+                return "Flashlight ON"
+            }
+            return "Flashlight On - Intensity: " + (arg as! String)
+        }
         flashAct.executeBlock = { (arg : Any?, _ : [Any?]) -> Bool in
             
             let num = (arg == nil) ? 1.0 : (arg! as! NSString).floatValue
@@ -42,7 +47,9 @@ class Actions {
     static let flashOffFunc =
     { () -> Action in
         let flashAct = Action()
-        flashAct.name = "Flashlight OFF"
+        flashAct.name = { (arg : Any?) -> String in
+            return "Flashlight OFF"
+        }
         flashAct.executeBlock = { (_ : Any?, _ : [Any?]) -> Bool in
             let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
             if (device.hasTorch) {
@@ -70,7 +77,12 @@ class Actions {
         callAct.argumentPickerVC = CFTextViewController(nibName:"CFTextViewController", bundle:nil)
         callAct.argumentPickerVC?.title = "Phone Number"
         (callAct.argumentPickerVC! as! CFTextViewController).hintText = "Phone Number"
-        callAct.name = "Call Phone Number"
+        callAct.name = { (arg : Any?) -> String in
+            if arg == nil {
+                return "Call Number"
+            }
+            return "Call - " + (arg as! String)
+        }
 
         callAct.executeBlock = { (number : Any?, _ : [Any?]) -> Bool in
             let url = "tel://" + (number as! String)
