@@ -12,12 +12,17 @@ class Conditions{
     static let afterTimeFunc =
     { () -> Condition in
         let afterTimeCond = Condition()
-        afterTimeCond.executeBlock = { (time: Any?) -> Any? in
-            if time == nil {
+        afterTimeCond.argumentPickerVC = CFDateViewController(nibName:"CFDateViewController", bundle:nil)
+        afterTimeCond.argumentPickerVC?.title = "set time"
+        afterTimeCond.name = "Alarm Condition"
+        
+        afterTimeCond.executeBlock = { (date_any: Any?) -> Any? in
+            if date_any == nil {
                 return nil
             }
+            let time = (date_any as! NSDate)
             let currentTime = NSDate()
-            switch currentTime.compare(time as! NSDate){
+            switch currentTime.compare(time){
             case .OrderedDescending:
                 return true
             case .OrderedSame:
@@ -35,12 +40,16 @@ class Conditions{
     static let beforeTimeFunc =
     { () -> Condition in
         let beforeTimeCond = Condition()
-        beforeTimeCond.executeBlock = { (time: Any?) -> Any? in
-            if time == nil {
+        beforeTimeCond.argumentPickerVC = CFDateViewController(nibName:"CFDateViewController", bundle:nil)
+        beforeTimeCond.argumentPickerVC?.title = "set time"
+        beforeTimeCond.name = "Alarm Condition"
+        beforeTimeCond.executeBlock = { (date_any: Any?) -> Any? in
+            if date_any == nil {
                 return nil
             }
+            let time = (date_any as! NSDate)
             let currentTime = NSDate()
-            switch currentTime.compare(time as! NSDate){
+            switch currentTime.compare(time){
             case .OrderedAscending:
                 return true
             default:

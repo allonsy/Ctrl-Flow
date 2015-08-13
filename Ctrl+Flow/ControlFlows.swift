@@ -13,11 +13,6 @@ class ControlFlows{
     { () -> ControlFlow in
         let ifCF = ControlFlow()
         ifCF.executeBlock = { (condition: Condition, actions: ActionSequence) -> Bool in
-            if actions.count < 2{
-                return false
-            }
-            //I don't like how we just take the first 2 elements of the actions, but we'll leave it for now
-            //Can we make it so we have the if condition actions on the evens, and the else condition on the odds?
             let conditionValue : Any? = condition.evaluate()
             if (conditionValue != nil) {
                 for i in 0..<actions.count{

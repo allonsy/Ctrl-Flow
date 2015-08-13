@@ -26,7 +26,9 @@
                 <constraint firstItem="djE-3r-Kbq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="74" id="Xan-hO-PnZ"/>
                 <constraint firstItem="djE-3r-Kbq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n2h-vw-6ld"/>
                 <constraint firstItem="djE-3r-Kbq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="144" id="tQX-IS-X0b"/>
+                <constraint firstAttribute="centerY" secondItem="djE-3r-Kbq" secondAttribute="centerY" constant="141" id="uGf-Jd-S4f"/>
             </constraints>
+            <point key="canvasLocation" x="274" y="225"/>
         </view>
     </objects>
 </document>
