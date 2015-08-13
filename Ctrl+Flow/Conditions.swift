@@ -80,10 +80,15 @@ class Conditions{
     static let numberFunc =
     { () -> Condition in
         let numberCond = Condition()
+        numberCond.argumentPickerVC = CFTextViewController(nibName:"CFTextViewController", bundle:nil)
+        numberCond.argumentPickerVC?.title = "How many times?"
+        (numberCond.argumentPickerVC! as! CFTextViewController).hintText = "1"
+        numberCond.name = "Number Condition"
+       
         var stack = numberCond.stack
         numberCond.executeBlock = { (number: Any?) -> Any? in
             if (stack.count == 0){
-                var num = number as! Int
+                var num = (number as! String).toInt()!
                 println(num)
                 if (num == 0){
                     return nil
@@ -105,17 +110,18 @@ class Conditions{
         }
         return numberCond
     }
-    static let number = ConditionWrapper(name:"False Condition",
+    static let number = ConditionWrapper(name:"Number Condition",
         description:"returns true n times, then returns false",
         returnConditionFunc: numberFunc)
 
     static let inCallFunc =
     { () -> Condition in
         let inCallCond = Condition()
+        inCallCond.name = "In Call"
         inCallCond.executeBlock = { (_: Any?) -> Any? in
             var callCenter = CTCallCenter()
             let calls = callCenter.currentCalls
-            if calls.isEmpty{
+            if calls.isEmpty {
                 return nil
             }
             return calls.first

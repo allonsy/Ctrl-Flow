@@ -37,6 +37,7 @@ class ConditionTableViewController: UITableViewController,CallbackWhenReadyDeleg
         else
         {
             newCondition.argumentPickerVC!.callbackDelegate = self
+            newCondition.argumentPickerVC!.indexPath = indexPath
             newCondition.argumentPickerVC?.thisObj = newCondition
             navigationController?.pushViewController(newCondition.argumentPickerVC!, animated: true)
         }
