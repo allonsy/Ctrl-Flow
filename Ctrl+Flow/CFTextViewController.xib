@@ -16,18 +16,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="djE-3r-Kbq">
-                    <rect key="frame" x="74" y="144" width="452" height="30"/>
+                    <rect key="frame" x="74" y="285" width="452" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="djE-3r-Kbq" secondAttribute="bottom" constant="285" id="0f0-0L-BIo"/>
+                <constraint firstItem="djE-3r-Kbq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="74" id="0jm-1d-x3G"/>
+                <constraint firstAttribute="centerY" secondItem="djE-3r-Kbq" secondAttribute="centerY" id="2If-7e-s6q"/>
+                <constraint firstItem="djE-3r-Kbq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="87d-YM-Vju"/>
                 <constraint firstItem="djE-3r-Kbq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="74" id="Xan-hO-PnZ"/>
+                <constraint firstItem="djE-3r-Kbq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ag1-mH-0fc"/>
+                <constraint firstAttribute="centerY" secondItem="djE-3r-Kbq" secondAttribute="centerY" id="iwY-oO-gC0"/>
                 <constraint firstItem="djE-3r-Kbq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n2h-vw-6ld"/>
-                <constraint firstItem="djE-3r-Kbq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="144" id="tQX-IS-X0b"/>
-                <constraint firstAttribute="centerY" secondItem="djE-3r-Kbq" secondAttribute="centerY" constant="141" id="uGf-Jd-S4f"/>
+                <constraint firstAttribute="trailing" secondItem="djE-3r-Kbq" secondAttribute="trailing" constant="74" id="pIG-QJ-UHA"/>
+                <constraint firstItem="djE-3r-Kbq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="285" id="tQX-IS-X0b"/>
+                <constraint firstAttribute="centerY" secondItem="djE-3r-Kbq" secondAttribute="centerY" id="uGf-Jd-S4f"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="0f0-0L-BIo"/>
+                    <exclude reference="2If-7e-s6q"/>
+                    <exclude reference="Xan-hO-PnZ"/>
+                    <exclude reference="iwY-oO-gC0"/>
+                    <exclude reference="n2h-vw-6ld"/>
+                    <exclude reference="pIG-QJ-UHA"/>
+                    <exclude reference="tQX-IS-X0b"/>
+                    <exclude reference="uGf-Jd-S4f"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="274" y="225"/>
         </view>
     </objects>
