@@ -30,7 +30,8 @@ class CFGlobal
         Actions.call,
         Actions.notification,
         Actions.sleep,
-        Actions.morseThat
+        Actions.morseThat,
+        Actions.morseUserInput
     ]
     
     static let controls : [ControlFlowWrapper] =

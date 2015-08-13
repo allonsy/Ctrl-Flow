@@ -197,4 +197,14 @@ private func returnMorseCodeAction() -> Action
     retAction.executeBlock = flashMorseAction
     return retAction
 }
+
+private func returnUserInputMorseCode() -> Action
+{
+    let retAction = returnMorseCodeAction()
+    retAction.argumentPickerVC = CFTextViewController(nibName:"CFTextViewController", bundle:nil)
+    retAction.argumentPickerVC?.title = "Encode Phrase"
+    return retAction
+}
+
 let morseActionWrap = ActionWrapper(name: "Morse Code that item", description: "Morse flash the item being passed in", returnActionFunc: returnMorseCodeAction)
+let morseCodeUserInputWrap = ActionWrapper(name: "Morse code a string", description: "encode a string into morse code", returnActionFunc: returnUserInputMorseCode)
