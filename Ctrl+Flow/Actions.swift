@@ -97,6 +97,7 @@ class Actions {
 
     static let sleep = sleepAction
     static let notification = notificationAction
+    static let morseThat = morseActionWrap
 }
 
 

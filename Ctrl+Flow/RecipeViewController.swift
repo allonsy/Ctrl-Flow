@@ -33,7 +33,6 @@ class RecipeViewController: UITableViewController,CallbackWhenReadyDelegate
         addRecipeVC.indexPath = NSIndexPath(forRow: recipeSource.recipes.count, inSection: 0)
         addRecipeVC.callBackDelegate=self
         self.navigationController?.pushViewController(addRecipeVC, animated: true)
-        
     }
     
     override func viewWillAppear(animated: Bool) {

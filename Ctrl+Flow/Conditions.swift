@@ -141,4 +141,5 @@ class Conditions{
     static let inCall = ConditionWrapper(name:"In Call Condition",
         description:"returns true if receiving a call, else returns false",
         returnConditionFunc: beforeTimeFunc)
+    static let receiveGmail = receiveGmailCondititon
 }

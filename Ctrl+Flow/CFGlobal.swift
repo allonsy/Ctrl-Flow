@@ -19,7 +19,8 @@ class CFGlobal
         Conditions.falseCondition,
         Conditions.trueCondition,
         Conditions.number,
-        Conditions.inCall
+        Conditions.inCall,
+        Conditions.receiveGmail
     ]
     
     static let actions : [ActionWrapper] =
@@ -28,7 +29,8 @@ class CFGlobal
         Actions.flashOff,
         Actions.call,
         Actions.notification,
-        Actions.sleep
+        Actions.sleep,
+        Actions.morseThat
     ]
     
     static let controls : [ControlFlowWrapper] =

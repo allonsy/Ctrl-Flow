@@ -13,6 +13,12 @@
 		233CBDC21B71907E00547DEA /* ControlFlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CBDC11B71907E00547DEA /* ControlFlows.swift */; };
 		233CBDC41B71908900547DEA /* Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CBDC31B71908900547DEA /* Conditions.swift */; };
 		233CBE3A1B7BC21300547DEA /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CBE391B7BC21300547DEA /* Notification.swift */; };
+		7307FB5E1B7AC085008959AA /* GoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7307FB5D1B7AC085008959AA /* GoogleAuth.swift */; };
+		7309C21D1B7ABEB20000F711 /* libGTLTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7309C21C1B7ABEB20000F711 /* libGTLTouchStaticLib.a */; };
+		7309C2201B7ABEBC0000F711 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7309C21E1B7ABEBC0000F711 /* Security.framework */; };
+		7309C2211B7ABEBC0000F711 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7309C21F1B7ABEBC0000F711 /* SystemConfiguration.framework */; };
+		7309C2231B7ABFAD0000F711 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7309C2221B7ABFAD0000F711 /* GTMOAuth2ViewTouch.xib */; };
+		7309C2271B7AC0190000F711 /* GTLGmail_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 7309C2251B7AC0190000F711 /* GTLGmail_Sources.m */; };
 		237F78671B7D148C00CCB7DB /* CFDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237F78661B7D148C00CCB7DB /* CFDateViewController.xib */; };
 		237F78691B7D149A00CCB7DB /* CFDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F78681B7D149A00CCB7DB /* CFDateViewController.swift */; };
 		730E3E4C1B6BEC5E00F79D4F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730E3E4B1B6BEC5E00F79D4F /* Recipe.swift */; };
@@ -22,9 +28,11 @@
 		730E3E561B6C1C7700F79D4F /* EditRecipeDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730E3E551B6C1C7700F79D4F /* EditRecipeDataController.swift */; };
 		7316105A1B6ADF6200966D26 /* ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731610591B6ADF6200966D26 /* ControlFlow.swift */; };
 		731610641B6AF26D00966D26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 731610631B6AF26D00966D26 /* Localizable.strings */; };
+		7318DD741B7BCED400D74FCB /* RecvGmailCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7318DD731B7BCED400D74FCB /* RecvGmailCondition.swift */; };
 		733E93181B6AD0E700668297 /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E93171B6AD0E700668297 /* ActionProtocol.swift */; };
 		733E931A1B6AD74600668297 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E93191B6AD74600668297 /* Action.swift */; };
 		733E931C1B6ADD3700668297 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733E931B1B6ADD3700668297 /* Condition.swift */; };
+		733FBE041B7D357F00AE33FA /* MorseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733FBE031B7D357F00AE33FA /* MorseCode.swift */; };
 		7340B8F71B701423003936F8 /* CFTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340B8F51B701423003936F8 /* CFTextViewController.swift */; };
 		7340B8F81B701423003936F8 /* CFTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7340B8F61B701423003936F8 /* CFTextViewController.xib */; };
 		7340B8FA1B702B5D003936F8 /* CFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340B8F91B702B5D003936F8 /* CFViewController.swift */; };
@@ -67,6 +75,14 @@
 		233CBDC11B71907E00547DEA /* ControlFlows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlows.swift; sourceTree = "<group>"; };
 		233CBDC31B71908900547DEA /* Conditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conditions.swift; sourceTree = "<group>"; };
 		233CBE391B7BC21300547DEA /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		7307FB5D1B7AC085008959AA /* GoogleAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAuth.swift; sourceTree = "<group>"; };
+		7309C21C1B7ABEB20000F711 /* libGTLTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGTLTouchStaticLib.a; path = "google-api-objectivec-client/Source/build/Debug-iphoneos/libGTLTouchStaticLib.a"; sourceTree = "<group>"; };
+		7309C21E1B7ABEBC0000F711 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7309C21F1B7ABEBC0000F711 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7309C2221B7ABFAD0000F711 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "../google-api-objectivec-client/Source/OAuth2/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = "<group>"; };
+		7309C2241B7AC0180000F711 /* Ctrl+Flow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ctrl+Flow-Bridging-Header.h"; sourceTree = "<group>"; };
+		7309C2251B7AC0190000F711 /* GTLGmail_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGmail_Sources.m; path = "google-api-objectivec-client/Source/Services/Gmail/Generated/GTLGmail_Sources.m"; sourceTree = SOURCE_ROOT; };
+		7309C2261B7AC0190000F711 /* GTLGmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGmail.h; path = "google-api-objectivec-client/Source/Services/Gmail/Generated/GTLGmail.h"; sourceTree = SOURCE_ROOT; };
 		237F78661B7D148C00CCB7DB /* CFDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFDateViewController.xib; sourceTree = "<group>"; };
 		237F78681B7D149A00CCB7DB /* CFDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFDateViewController.swift; sourceTree = "<group>"; };
 		730E3E4B1B6BEC5E00F79D4F /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -76,9 +92,11 @@
 		730E3E551B6C1C7700F79D4F /* EditRecipeDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRecipeDataController.swift; sourceTree = "<group>"; };
 		731610591B6ADF6200966D26 /* ControlFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlow.swift; sourceTree = "<group>"; };
 		731610631B6AF26D00966D26 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		7318DD731B7BCED400D74FCB /* RecvGmailCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecvGmailCondition.swift; sourceTree = "<group>"; };
 		733E93171B6AD0E700668297 /* ActionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		733E93191B6AD74600668297 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = ../Action.swift; sourceTree = "<group>"; };
 		733E931B1B6ADD3700668297 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		733FBE031B7D357F00AE33FA /* MorseCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MorseCode.swift; sourceTree = "<group>"; };
 		7340B8F51B701423003936F8 /* CFTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFTextViewController.swift; sourceTree = "<group>"; };
 		7340B8F61B701423003936F8 /* CFTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFTextViewController.xib; sourceTree = "<group>"; };
 		7340B8F91B702B5D003936F8 /* CFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +131,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7309C2201B7ABEBC0000F711 /* Security.framework in Frameworks */,
+				7309C2211B7ABEBC0000F711 /* SystemConfiguration.framework in Frameworks */,
+				7309C21D1B7ABEB20000F711 /* libGTLTouchStaticLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,13 +150,36 @@
 		233CBDBE1B71905200547DEA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7309C2281B7AC0270000F711 /* Google */,
 				233CBDBF1B71907500547DEA /* Actions.swift */,
 				233CBDC31B71908900547DEA /* Conditions.swift */,
 				233CBDC11B71907E00547DEA /* ControlFlows.swift */,
 				233CBE391B7BC21300547DEA /* Notification.swift */,
 				73A3CB3D1B795A5B006365B6 /* Sleep.swift */,
+				733FBE031B7D357F00AE33FA /* MorseCode.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		7307FB5F1B7AC541008959AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7309C21E1B7ABEBC0000F711 /* Security.framework */,
+				7309C21F1B7ABEBC0000F711 /* SystemConfiguration.framework */,
+				7309C21C1B7ABEB20000F711 /* libGTLTouchStaticLib.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7309C2281B7AC0270000F711 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				7309C2251B7AC0190000F711 /* GTLGmail_Sources.m */,
+				7309C2261B7AC0190000F711 /* GTLGmail.h */,
+				7307FB5D1B7AC085008959AA /* GoogleAuth.swift */,
+				7318DD731B7BCED400D74FCB /* RecvGmailCondition.swift */,
+			);
+			name = Google;
 			sourceTree = "<group>";
 		};
 		730E3E4F1B6BF06E00F79D4F /* Data Sources */ = {
@@ -215,6 +259,7 @@
 				73F1944F1B6994D3009DD6C4 /* Ctrl+Flow */,
 				73F194651B6994D3009DD6C4 /* Ctrl+FlowTests */,
 				73F1944E1B6994D3009DD6C4 /* Products */,
+				7307FB5F1B7AC541008959AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,6 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				73F194511B6994D3009DD6C4 /* Info.plist */,
+				7309C2221B7ABFAD0000F711 /* GTMOAuth2ViewTouch.xib */,
+				7309C2241B7AC0180000F711 /* Ctrl+Flow-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -354,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7309C2231B7ABFAD0000F711 /* GTMOAuth2ViewTouch.xib in Resources */,
 				73F194581B6994D3009DD6C4 /* Main.storyboard in Resources */,
 				231646EF1B7AB3F000BE293D /* CFTitleAndTextViewController.xib in Resources */,
 				731610641B6AF26D00966D26 /* Localizable.strings in Resources */,
@@ -378,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7309C2271B7AC0190000F711 /* GTLGmail_Sources.m in Sources */,
 				7340B8F71B701423003936F8 /* CFTextViewController.swift in Sources */,
 				9754E22B1B6D6D97000EA6DF /* CFRecipeSwitch.swift in Sources */,
 				7383C4BA1B6FF0CF00F20D18 /* ActionDataController.swift in Sources */,
@@ -385,8 +434,10 @@
 				73C3DFEA1B715AF000FC6745 /* ControlFlowTableViewController.swift in Sources */,
 				730E3E561B6C1C7700F79D4F /* EditRecipeDataController.swift in Sources */,
 				73C3DFE61B7154BB00FC6745 /* ConditionTableViewController.swift in Sources */,
+				7307FB5E1B7AC085008959AA /* GoogleAuth.swift in Sources */,
 				73F194731B69950B009DD6C4 /* Functional.swift in Sources */,
 				733E931C1B6ADD3700668297 /* Condition.swift in Sources */,
+				733FBE041B7D357F00AE33FA /* MorseCode.swift in Sources */,
 				73F194551B6994D3009DD6C4 /* ViewController.swift in Sources */,
 				730E3E541B6C1BCD00F79D4F /* EditRecipeViewController.swift in Sources */,
 				730E3E4E1B6BEE9800F79D4F /* RecipeViewController.swift in Sources */,
@@ -401,6 +452,7 @@
 				233CBE3A1B7BC21300547DEA /* Notification.swift in Sources */,
 				7383C4B61B6FE85C00F20D18 /* CFGlobal.swift in Sources */,
 				233CBDC21B71907E00547DEA /* ControlFlows.swift in Sources */,
+				7318DD741B7BCED400D74FCB /* RecvGmailCondition.swift in Sources */,
 				233CBDC41B71908900547DEA /* Conditions.swift in Sources */,
 				73C3DFF21B7160C300FC6745 /* EditControlFlowDataController.swift in Sources */,
 				233CBDC01B71907500547DEA /* Actions.swift in Sources */,
@@ -537,12 +589,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Ctrl+Flow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/google-api-objectivec-client/Source/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ctrl+Flow/Ctrl+Flow-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/google-api-objectivec-client/Source/**";
 			};
 			name = Debug;
 		};
@@ -550,12 +614,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Ctrl+Flow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/google-api-objectivec-client/Source/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ctrl+Flow/Ctrl+Flow-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/google-api-objectivec-client/Source/**";
 			};
 			name = Release;
 		};

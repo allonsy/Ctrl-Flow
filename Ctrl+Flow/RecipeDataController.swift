@@ -124,7 +124,7 @@ class RecipeDataController : NSObject,UITableViewDataSource,UITableViewDelegate 
             }
             parent = parent.superview!
         }
-        return parent as! UITableView
+        return (parent as! UITableView)
     }
 }
 
