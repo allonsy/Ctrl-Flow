@@ -161,6 +161,11 @@ private func returnMorseCodeAction() -> Action
 {
     let retAction = Action()
     retAction.name = {(_ : Any?) -> String in return "Morse code that item" }
+    retAction.argumentPickerVC = CFTextViewController(nibName:"CFTextViewController", bundle:nil)
+    retAction.argumentPickerVC?.title = "Morse codify "
+    (retAction.argumentPickerVC! as! CFTextViewController).hintText = "enter text here"
+    (retAction.argumentPickerVC! as! CFTextViewController).defaultReturn = "SOS "
+    
     func flashMorseAction (arg : Any?, argList : [Any?]) -> Bool
     {
         var toFlash : String = "SOS "
