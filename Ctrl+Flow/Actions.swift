@@ -99,6 +99,15 @@ class Actions {
     static let notification = notificationAction
     static let morseThat = morseActionWrap
     static let morseUserInput = morseCodeUserInputWrap
+    static let vibrate = ActionWrapper(name: "Vibrate", description: "Vibrate the device", returnActionFunc: returnEmptyAction)
+    static let uber = ActionWrapper(name: "Uber", description: "Call and Uber", returnActionFunc: returnEmptyAction)
+    static let sendText = ActionWrapper(name: "text", description: "Send a text", returnActionFunc: returnEmptyAction)
+    static let sendEmail = ActionWrapper(name: "Email", description: "Send an email", returnActionFunc: returnEmptyAction)
+    static let worldPeace = ActionWrapper(name: "Create World Peace", description: "nuff said", returnActionFunc: returnEmptyAction)
+}
+private func returnEmptyAction() -> Action
+{
+    return Action()
 }
 
 

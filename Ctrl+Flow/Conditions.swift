@@ -144,4 +144,19 @@ class Conditions{
         description:"returns true if receiving a call, else returns false",
         returnConditionFunc: beforeTimeFunc)
     static let receiveGmail = receiveGmailCondititon
+    
+    static let receiveText = ConditionWrapper(name: "Receive a text", description: "On text received", returnConditionFunc: returnEmptyCondition)
+    static let receiveCall = ConditionWrapper(name: "Receive a call", description: "On call received", returnConditionFunc: returnEmptyCondition)
+    static let geolocation = ConditionWrapper(name: "When I leave", description: "When you leave an area", returnConditionFunc: returnEmptyCondition)
+    static let geolocationEnter = ConditionWrapper(name: "When I enter", description: "When you enter an area", returnConditionFunc: returnEmptyCondition)
+    static let pullReq = ConditionWrapper(name: "Pull Request received", description: "if you receive a PR", returnConditionFunc: returnEmptyCondition)
+    static let bearAttack = ConditionWrapper(name: "Bear Attack", description: "if a bear is attacking", returnConditionFunc: returnEmptyCondition)
+    static let logic = ConditionWrapper(name: "Logical operators", description: "Equals, and, or, not", returnConditionFunc: returnEmptyCondition)
+
+
+}
+
+private func returnEmptyCondition() -> Condition
+{
+    return Condition()
 }

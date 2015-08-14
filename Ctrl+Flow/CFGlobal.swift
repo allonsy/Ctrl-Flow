@@ -18,9 +18,16 @@ class CFGlobal
         Conditions.beforeTime,
         Conditions.falseCondition,
         Conditions.trueCondition,
+        Conditions.logic,*
         Conditions.number,
         Conditions.inCall,
-        Conditions.receiveGmail
+        Conditions.receiveGmail,
+        Conditions.receiveText,
+        Conditions.receiveCall,
+        Conditions.pullReq,
+        Conditions.geolocation,
+        Conditions.geolocationEnter,
+        Conditions.bearAttack
     ]
     
     static let actions : [ActionWrapper] =
@@ -31,14 +38,21 @@ class CFGlobal
         Actions.notification,
         Actions.sleep,
         Actions.morseThat,
-        Actions.morseUserInput
+        Actions.morseUserInput,
+        Actions.uber,
+        Actions.sendText,
+        Actions.vibrate,
+        Actions.sendEmail,
+        Actions.worldPeace
     ]
     
     static let controls : [ControlFlowWrapper] =
     [
         ControlFlows.ifControl,
         ControlFlows.loopUntil,
-        ControlFlows.loopWhile
+        ControlFlows.loopWhile,
+        ControlFlows.ifelse,
+        ControlFlows.switchCF
     ]
     
     static let logger = CFLogging()
