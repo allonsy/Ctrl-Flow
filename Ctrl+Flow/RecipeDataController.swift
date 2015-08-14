@@ -11,7 +11,18 @@ import UIKit
 class RecipeDataController : NSObject,UITableViewDataSource,UITableViewDelegate {
     
     //var recipes = [Recipe]()
-    var recipes = [Recipe(name: "Hello everyone in the world", actions: [returnHello()], continuous: false)]
+    var recipes = [
+        Recipe(name: "Hello everyone in the world", actions: [returnHello()], continuous: false),
+        timeBasedNotificationRecipe(),
+        Recipe(name: "Hello/Goodbye notification",  actions: returnHelloGoodbyeList(), continuous: true),
+        morseCodeGmailRecipe(),
+        Recipe(name: "Turn on wifi when home", actions: returnWifiRecipe(), continuous: true),
+        Recipe(name: "Add email sender to contacts", actions: returnAddContactRecipe(), continuous: true),
+        callUberAtTimeRecipe(),
+        Recipe(name: "Boldly go where no one has gone before", actions: [returnHello()], continuous: true),
+        Recipe(name: "Don't press this button!", actions: [returnHello()], continuous: false),
+        Recipe(name: "I wonder what this red button do?", actions: [returnHello()], continuous: false)
+    ]
     var navigationController : UINavigationController? = nil
     
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -139,4 +150,66 @@ private func returnHello() -> Action
     helloEveryoneAction.executeBlock = notifyHello
     helloEveryoneAction.name = { (_ : Any?) -> String in return "Hello Everyone In The World"}
     return helloEveryoneAction
+}
+
+private func returnHelloGoodbyeList() -> [Executable]
+{
+    let helloAction = Actions.notification.returnAction()
+    helloAction.arg = ("Hello", "Hello Everyone")
+    let sleepAction = Actions.sleep.returnAction()
+    sleepAction.arg = "5.0"
+    let goodByeAction = Actions.notification.returnAction()
+    goodByeAction.arg = ("Goodbye", "Goodbye Everyone")
+    return [helloAction, sleepAction, goodByeAction, sleepAction]
+}
+
+private func returnWifiRecipe() -> [Executable]
+{
+    let ifCF = ControlFlows.ifControl.returnControlFlow()
+    ifCF.condition = Conditions.geolocationEnter.returnCondition()
+    ifCF.condition.name = "When I get home"
+    let turnOnWifiAction = Action()
+    turnOnWifiAction.name = {(_ : Any?) -> String in return "Turn on Wifi" }
+    ifCF.actions = [turnOnWifiAction]
+    return [ifCF]
+}
+
+private func returnAddContactRecipe() -> [Executable]
+{
+    let ifCF = ControlFlows.ifControl.returnControlFlow()
+    ifCF.condition = Conditions.receiveGmail.returnCondition()
+    ifCF.condition.name = "When I receive an Email"
+    let turnOnWifiAction = Action()
+    turnOnWifiAction.name = {(_ : Any?) -> String in return "Add that person to contacts" }
+    ifCF.actions = [turnOnWifiAction]
+    return [ifCF]
+}
+
+private func callUberAtTimeRecipe() -> Recipe
+{
+    let ifCF = ControlFlows.ifControl.returnControlFlow()
+    ifCF.condition = Conditions.afterTime.returnCondition()
+    let uberAction = Actions.uber.returnAction()
+    uberAction.name = {(_ : Any?) -> String in return "Call an Uber"}
+    ifCF.actions = [uberAction]
+    return Recipe(name: "Call an uber at time", actions: [ifCF], continuous: false)
+}
+
+private func morseCodeGmailRecipe() -> Recipe
+{
+    let ifCF = ControlFlows.ifControl.returnControlFlow()
+    ifCF.condition = Conditions.receiveGmail.returnCondition()
+    let morseAction = Actions.morseThat.returnAction()
+    ifCF.actions = [morseAction]
+    return Recipe(name: "Morse code gmail sender", actions: [ifCF], continuous: true)
+}
+
+private func timeBasedNotificationRecipe() -> Recipe
+{
+    let ifCF = ControlFlows.ifControl.returnControlFlow()
+    ifCF.condition = Conditions.afterTime.returnCondition()
+    let notificationAction = Actions.notification.returnAction()
+    notificationAction.arg = ("Hello", "Alarm triggered")
+    ifCF.actions = [notificationAction, Actions.exitAction.returnAction()]
+    return Recipe(name: "Notification at a certain time", actions: [ifCF], continuous: true)
 }

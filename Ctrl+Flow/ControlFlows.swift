@@ -79,4 +79,11 @@ class ControlFlows{
         description: "until loop Control Flow",
         returnControlFunc: loopUntilControlFunc)
     
+    static let switchCF = ControlFlowWrapper(name: "Switch", description: "Switch over a value", returnControlFunc: returnEmptyCF)
+    static let ifelse = ControlFlowWrapper(name: "If/Else", description: "If/Else block", returnControlFunc: returnEmptyCF)
+}
+
+private func returnEmptyCF() -> ControlFlow
+{
+    return ControlFlow()
 }
