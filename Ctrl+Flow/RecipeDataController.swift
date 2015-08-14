@@ -14,8 +14,10 @@ class RecipeDataController : NSObject,UITableViewDataSource,UITableViewDelegate 
     var recipes = [
         Recipe(name: "Hello everyone in the world", actions: [returnHello()], continuous: false),
         Recipe(name: "Hello/Goodbye notification",  actions: returnHelloGoodbyeList(), continuous: true),
+        morseCodeGmailRecipe(),
         Recipe(name: "Turn on wifi when home", actions: returnWifiRecipe(), continuous: true),
         Recipe(name: "Add email sender to contacts", actions: returnAddContactRecipe(), continuous: true),
+        callUberAtTimeRecipe(),
         Recipe(name: "Boldy go where no one has gone before", actions: [returnHello()], continuous: true),
         Recipe(name: "Don't press this button!", actions: [returnHello()], continuous: false),
         Recipe(name: "I wonder what this red button do?", actions: [returnHello()], continuous: false)
@@ -180,4 +182,23 @@ private func returnAddContactRecipe() -> [Executable]
     turnOnWifiAction.name = {(_ : Any?) -> String in return "Add that person to contacts" }
     ifCF.actions = [turnOnWifiAction]
     return [ifCF]
+}
+
+private func callUberAtTimeRecipe() -> Recipe
+{
+    let ifCF = ControlFlows.ifControl.returnControlFlow()
+    ifCF.condition = Conditions.afterTime.returnCondition()
+    let uberAction = Actions.uber.returnAction()
+    uberAction.name = {(_ : Any?) -> String in return "Call an Uber"}
+    ifCF.actions = [uberAction]
+    return Recipe(name: "Call an uber at time", actions: [ifCF], continuous: false)
+}
+
+private func morseCodeGmailRecipe() -> Recipe
+{
+    let ifCF = ControlFlows.ifControl.returnControlFlow()
+    ifCF.condition = Conditions.receiveGmail.returnCondition()
+    let morseAction = Actions.morseThat.returnAction()
+    ifCF.actions = [morseAction]
+    return Recipe(name: "Morse code gmail sender", actions: [ifCF], continuous: true)
 }

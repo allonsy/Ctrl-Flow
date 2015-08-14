@@ -18,7 +18,7 @@ class CFGlobal
         Conditions.beforeTime,
         Conditions.falseCondition,
         Conditions.trueCondition,
-        Conditions.logic,*
+        Conditions.logic,
         Conditions.number,
         Conditions.inCall,
         Conditions.receiveGmail,
@@ -43,7 +43,8 @@ class CFGlobal
         Actions.sendText,
         Actions.vibrate,
         Actions.sendEmail,
-        Actions.worldPeace
+        Actions.worldPeace,
+        Actions.mineBitcoin
     ]
     
     static let controls : [ControlFlowWrapper] =

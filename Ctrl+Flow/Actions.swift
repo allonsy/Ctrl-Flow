@@ -104,6 +104,7 @@ class Actions {
     static let sendText = ActionWrapper(name: "text", description: "Send a text", returnActionFunc: returnEmptyAction)
     static let sendEmail = ActionWrapper(name: "Email", description: "Send an email", returnActionFunc: returnEmptyAction)
     static let worldPeace = ActionWrapper(name: "Create World Peace", description: "nuff said", returnActionFunc: returnEmptyAction)
+    static let mineBitcoin = ActionWrapper(name: "Mine Bitcoin", description: "make me rich", returnActionFunc: returnEmptyAction)
 }
 private func returnEmptyAction() -> Action
 {
