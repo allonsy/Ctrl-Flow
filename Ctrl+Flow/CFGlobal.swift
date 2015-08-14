@@ -39,6 +39,7 @@ class CFGlobal
         Actions.sleep,
         Actions.morseThat,
         Actions.morseUserInput,
+        Actions.exitAction,
         Actions.uber,
         Actions.sendText,
         Actions.vibrate,

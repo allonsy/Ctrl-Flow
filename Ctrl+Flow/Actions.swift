@@ -105,10 +105,20 @@ class Actions {
     static let sendEmail = ActionWrapper(name: "Email", description: "Send an email", returnActionFunc: returnEmptyAction)
     static let worldPeace = ActionWrapper(name: "Create World Peace", description: "nuff said", returnActionFunc: returnEmptyAction)
     static let mineBitcoin = ActionWrapper(name: "Mine Bitcoin", description: "make me rich", returnActionFunc: returnEmptyAction)
+    static let exitAction = ActionWrapper(name: "Exit", description: "Exit Recipe", returnActionFunc: returnExitAction)
 }
 private func returnEmptyAction() -> Action
 {
     return Action()
+}
+private func returnExitAction() -> Action
+{
+    let act = Action()
+    act.name = {(_ : Any?) -> String in return "Exit"}
+    act.executeBlock = {(_ :Any?, _ :[Any?]) -> Bool in
+        NSThread.exit()
+        return true }
+    return act
 }
 
 
