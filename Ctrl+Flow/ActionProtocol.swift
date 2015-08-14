@@ -13,6 +13,7 @@ protocol Executable
 {
     func getName() -> String
     func execute() -> Bool
+    func addArgument (Any?) -> ()
 }
 
 protocol CallbackWhenReadyDelegate : class

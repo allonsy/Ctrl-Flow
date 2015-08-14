@@ -19,7 +19,9 @@ class CFDateViewController: CFViewController
     }
     
     func saveDate(){
-        callbackDelegate!.objIsReady((indexPath!, date.date))
+        let timeInterval = floor(date.date.timeIntervalSinceReferenceDate / 60.0) * 60.0
+        var FlooredDate = NSDate(timeIntervalSinceReferenceDate: timeInterval)
+        callbackDelegate!.objIsReady((indexPath!, FlooredDate))
         navigationController?.popViewControllerAnimated(true)
     }
 }

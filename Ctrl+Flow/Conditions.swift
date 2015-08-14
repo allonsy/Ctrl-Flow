@@ -22,6 +22,7 @@ class Conditions{
             }
             let time = (date_any as! NSDate)
             let currentTime = NSDate()
+            
             switch currentTime.compare(time){
             case .OrderedDescending:
                 return true
@@ -112,7 +113,8 @@ class Conditions{
             else {
                 var num = stack.removeAtIndex(0) as! Int
                 println(num)
-                if (num == 0){
+                if (num <= 0){
+                    stack.append(0)
                     return nil
                 }
                 var next_num = num - 1

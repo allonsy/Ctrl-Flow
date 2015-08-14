@@ -17,9 +17,8 @@ class ControlFlows{
             let conditionValue : Any? = condition.evaluate()
             if (conditionValue != nil) {
                 for i in 0..<actions.count{
-                    let action = actions[i] as! Action
-                    action.conditionArgs.append(conditionValue)
-                    action.execute()
+                    actions[i].addArgument(conditionValue)
+                    actions[i].execute()
                 }
             }
             return true
@@ -42,9 +41,8 @@ class ControlFlows{
                     NSThread.exit()
                 }
                 for i in 0..<actions.count{
-                    let action = actions[i] as! Action
-                    action.conditionArgs.append(conditionValue)
-                    action.execute()
+                    actions[i].addArgument(conditionValue)
+                    actions[i].execute()
                 }
                 conditionValue = condition.evaluate()
             }
@@ -68,9 +66,8 @@ class ControlFlows{
                     NSThread.exit()
                 }
                 for i in 0..<actions.count{
-                    let action = actions[i] as! Action
-                    action.conditionArgs.append(conditionValue)
-                    action.execute()
+                    actions[i].addArgument(conditionValue)
+                    actions[i].execute()
                 }
                 conditionValue = condition.evaluate()
             }

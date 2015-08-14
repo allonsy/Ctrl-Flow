@@ -27,6 +27,10 @@ class Action : Executable
     {
         return name(arg)
     }
+    
+    func addArgument(p: Any?) {
+        conditionArgs.append(p)
+    }
 }
 
 struct ActionWrapper

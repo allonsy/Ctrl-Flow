@@ -33,6 +33,12 @@ class Recipe : Executable
     {
         return name
     }
+    
+    func addArgument(p: Any?) {
+        for action in actions{
+            action.addArgument(p)
+        }
+    }
 }
 
 /* Recipe represents a sequence of Actions
