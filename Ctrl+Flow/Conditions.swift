@@ -65,6 +65,7 @@ class Conditions{
     static let trueFunc =
     { () -> Condition in
         let trueCond = Condition()
+        trueCond.name = "true"
         trueCond.executeBlock = { (_: Any?) -> Any? in
             return true
         }
@@ -77,6 +78,7 @@ class Conditions{
     static let falseFunc =
     { () -> Condition in
         let falseCond = Condition()
+        falseCond.name = "false"
         falseCond.executeBlock = { (_: Any?) -> Any? in
             return nil
         }

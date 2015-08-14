@@ -12,6 +12,7 @@ class ControlFlows{
     static let  ifControlFunc =
     { () -> ControlFlow in
         let ifCF = ControlFlow()
+        ifCF.name = "If Block"
         ifCF.executeBlock = { (condition: Condition, actions: ActionSequence) -> Bool in
             let conditionValue : Any? = condition.evaluate()
             if (conditionValue != nil) {
@@ -32,9 +33,14 @@ class ControlFlows{
     static let loopWhileControlFunc =
     { () -> ControlFlow in
         let loopWhileControlFlow = ControlFlow()
+        loopWhileControlFlow.name = "While"
         loopWhileControlFlow.executeBlock = { (condition: Condition, actions: ActionSequence) -> Bool in
             var conditionValue : Any? = condition.evaluate()
             while (conditionValue != nil){
+                if(NSThread.currentThread().cancelled)
+                {
+                    NSThread.exit()
+                }
                 for i in 0..<actions.count{
                     let action = actions[i] as! Action
                     action.conditionArgs.append(conditionValue)
@@ -53,9 +59,14 @@ class ControlFlows{
     static let loopUntilControlFunc =
     { () -> ControlFlow in
         let loopWhileControlFlow = ControlFlow()
+        loopWhileControlFlow.name = "Until Block"
         loopWhileControlFlow.executeBlock = { (condition: Condition, actions: ActionSequence) -> Bool in
             var conditionValue : Any? = condition.evaluate()
             while (conditionValue == nil){
+                if(NSThread.currentThread().cancelled)
+                {
+                    NSThread.exit()
+                }
                 for i in 0..<actions.count{
                     let action = actions[i] as! Action
                     action.conditionArgs.append(conditionValue)

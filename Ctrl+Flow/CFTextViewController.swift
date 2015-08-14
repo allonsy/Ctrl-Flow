@@ -11,7 +11,7 @@ import UIKit
 class CFTextViewController: CFViewController
 {
     var hintText : String? = nil
-    var defaultReturn : String? = nil
+    var defaultReturn : String = ""
     @IBOutlet weak var entryTextField: UITextField!
     
     override func viewDidLoad() {
